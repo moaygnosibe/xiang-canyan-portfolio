@@ -1,0 +1,12 @@
+.agents/
+.git-publish/
+poster-output/
+*.psd
+*.docx
+assets/studio-hero.png
+assets/docs/ir-led-current-driver.pdf
+assets/docs/isolated-power-protection-vcc-iso.pdf
+assets/docs/offline-isolated-flyback-power.pdf
+assets/docs/usb-rs232-isolated-interface.pdf
+Thumbs.db
+.DS_Store
