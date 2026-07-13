@@ -1,6 +1,9 @@
 .agents/
 .git-publish/
 poster-output/
+node_modules/
+.pnpm-store/
+dist/
 *.psd
 *.docx
 assets/studio-hero.png
