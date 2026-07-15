@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+﻿import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = process.cwd();
@@ -9,11 +9,15 @@ const server = resolve(dist, "server");
 await rm(dist, { recursive: true, force: true });
 await mkdir(client, { recursive: true });
 await mkdir(server, { recursive: true });
+await mkdir(resolve(client, "assets"), { recursive: true });
 
 await cp(resolve(root, "index.html"), resolve(client, "index.html"));
 await cp(resolve(root, "styles.css"), resolve(client, "styles.css"));
 await cp(resolve(root, "script.js"), resolve(client, "script.js"));
-await cp(resolve(root, "assets"), resolve(client, "assets"), { recursive: true });
+await cp(resolve(root, "assets", "xiangcanyan"), resolve(client, "assets", "xiangcanyan"), {
+  recursive: true,
+});
+await cp(resolve(root, "assets", "fonts"), resolve(client, "assets", "fonts"), { recursive: true });
 
 const worker = `export default {
   async fetch(request, env) {
@@ -33,4 +37,4 @@ const worker = `export default {
 
 await writeFile(resolve(server, "index.js"), worker, "utf8");
 
-console.log("Personal homepage build completed.");
+console.log("Xiang Canyan homepage build completed.");

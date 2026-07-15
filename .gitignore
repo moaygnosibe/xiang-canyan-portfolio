@@ -4,6 +4,7 @@ poster-output/
 node_modules/
 .pnpm-store/
 dist/
+tmp/
 *.psd
 *.docx
 assets/studio-hero.png

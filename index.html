@@ -1,29 +1,24 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>毕嵩尧 Bi Songyao | 通信工程个人主页</title>
+    <title>向粲妍 Xiang Canyan | 设计与建筑个人主页</title>
     <meta
       name="description"
-      content="毕嵩尧（Bi Songyao），华中科技大学电子信息与通信学院通信工程学生的学术个人主页。"
+      content="向粲妍，南昌大学建筑与设计学院环境设计专业学生，关注空间创意、文化叙事、品牌与IP设计。"
     />
-    <meta name="theme-color" content="#0f1d1b" />
+    <meta name="theme-color" content="#171b19" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="毕嵩尧 Bi Songyao | 通信工程个人主页" />
+    <meta property="og:title" content="向粲妍 Xiang Canyan | Design & Architecture" />
     <meta
       property="og:description"
-      content="华中科技大学通信工程学生毕嵩尧的个人主页、项目经历与联系方式。"
+      content="环境设计、空间创意、品牌与IP设计作品及个人履历。"
     />
-    <meta property="og:image" content="{{SITE_ORIGIN}}/assets/og.png" />
+    <meta property="og:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="毕嵩尧 Bi Songyao | 通信工程个人主页" />
-    <meta
-      name="twitter:description"
-      content="华中科技大学通信工程学生毕嵩尧的个人主页、项目经历与联系方式。"
-    />
-    <meta name="twitter:image" content="{{SITE_ORIGIN}}/assets/og.png" />
-    <link rel="preload" as="image" href="assets/communication-hero.png" />
+    <meta name="twitter:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview.webp" />
+    <link rel="preload" as="image" href="assets/xiangcanyan/portfolio-05.webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -31,15 +26,16 @@
 
     <header class="site-header" aria-label="主导航">
       <a class="brand" href="#top" aria-label="返回首页">
-        <span class="brand-mark">毕</span>
-        <span class="brand-text">毕嵩尧 · Bi Songyao</span>
+        <span class="brand-mark">向</span>
+        <span class="brand-name">向粲妍</span>
+        <span class="brand-role">空间 · 视觉 · 叙事</span>
       </a>
-      <nav class="nav-links" aria-label="页面栏目">
-        <a href="#profile">Profile</a>
-        <a href="#research">Focus</a>
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+      <nav class="desktop-nav" aria-label="页面栏目">
+        <a href="#about">关于</a>
+        <a href="#work">作品</a>
+        <a href="#research">研究</a>
+        <a href="#resume">履历</a>
+        <a href="#contact">联系</a>
       </nav>
       <button
         class="menu-button"
@@ -48,560 +44,369 @@
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <span></span>
-        <span></span>
+        <span></span><span></span>
       </button>
     </header>
 
     <nav id="mobile-menu" class="mobile-menu" aria-label="移动端导航" hidden>
-      <a href="#profile">Profile</a>
-      <a href="#research">Focus</a>
-      <a href="#projects">Projects</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
+      <a href="#about">关于</a>
+      <a href="#work">作品</a>
+      <a href="#research">研究</a>
+      <a href="#resume">履历</a>
+      <a href="#contact">联系</a>
     </nav>
 
     <main id="main">
       <section id="top" class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-image"
-          src="assets/communication-hero.png"
-          alt="通信工程学习场景，桌面上有电路板、信号波形、笔记本和实验设备"
-        />
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">HUST · Telecommunications Engineering · Undergraduate</p>
-          <h1 id="hero-title">毕嵩尧</h1>
-          <p class="hero-english">Bi Songyao</p>
-          <p class="hero-statement">通信工程本科生 · 嵌入式控制 / 无线通信 / 数据建模</p>
-          <p class="hero-copy">
-            我就读于华中科技大学电子信息与通信学院通信工程专业，预计
-            2027 年 6 月毕业。这个主页集中呈现我的教育背景、项目经历、学生工作与联系方式。
+        <div class="hero-copy">
+          <p class="eyebrow">南昌大学 · 环境设计 · 空间创意</p>
+          <h1 id="hero-title"><span>向粲妍</span><em>Xiang Canyan</em></h1>
+          <p class="hero-lead">在空间、文化与视觉之间，寻找既有秩序又有温度的表达。</p>
+          <p class="hero-description">
+            南昌大学建筑与设计学院环境设计专业本科生，空间创意方向。我的实践横跨建筑与景观、公共空间改造、品牌及 IP 视觉设计。
           </p>
-          <div class="hero-actions" aria-label="主要操作">
-            <a class="link-button" href="#projects">查看项目经历</a>
-            <a class="ghost-link" href="mailto:u202314558@hust.edu.cn">发送邮件</a>
+          <div class="hero-actions">
+            <a class="primary-button" href="#work">浏览作品 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="assets/xiangcanyan/xiang-canyan-portfolio.pdf" target="_blank" rel="noopener">
+              完整作品集 PDF <span aria-hidden="true">↗</span>
+            </a>
           </div>
-        </div>
-        <div class="hero-panel" aria-label="个人信息概览">
-          <dl>
-            <div>
-              <dt>Name</dt>
-              <dd>毕嵩尧 · Bi Songyao</dd>
-            </div>
-            <div>
-              <dt>School</dt>
-              <dd>华中科技大学</dd>
-            </div>
-            <div>
-              <dt>College</dt>
-              <dd>电子信息与通信学院</dd>
-            </div>
-            <div>
-              <dt>Major</dt>
-              <dd>通信工程</dd>
-            </div>
-            <div>
-              <dt>GPA / English</dt>
-              <dd>78.7/100 · IELTS 6.0</dd>
-            </div>
+          <dl class="hero-facts" aria-label="个人信息概览">
+            <div><dt>绩点</dt><dd>3.61</dd></div>
+            <div><dt>专业排名</dt><dd>2 / 74</dd></div>
+            <div><dt>方向</dt><dd>空间创意</dd></div>
           </dl>
         </div>
-      </section>
 
-      <section class="quick-index" aria-label="主页索引">
-        <a href="#profile">
-          <span>01</span>
-          <strong>Profile</strong>
-          <em>教育背景、语言与技术能力</em>
-        </a>
-        <a href="#projects">
-          <span>02</span>
-          <strong>Research & Competition</strong>
-          <em>机器人、UWB、5G 切片与 AI 后端</em>
-        </a>
-        <a href="#cv">
-          <span>03</span>
-          <strong>Student Work</strong>
-          <em>志愿服务、奖学金与项目协作</em>
-        </a>
-      </section>
-
-      <section id="profile" class="section profile-section">
-        <div class="section-shell">
-          <div class="section-title-row">
-            <div>
-              <div class="section-label">Profile</div>
-              <h2>教育与技术画像</h2>
-            </div>
-            <p>
-              通信工程本科在读，关注通信系统、嵌入式控制、后端架构与数据建模。
-            </p>
-          </div>
-
-          <div class="profile-board">
-            <article class="profile-card identity-card">
-              <span>Education</span>
-              <h3>华中科技大学</h3>
-              <dl>
-                <div>
-                  <dt>学院</dt>
-                  <dd>电子信息与通信学院</dd>
-                </div>
-                <div>
-                  <dt>专业</dt>
-                  <dd>通信工程</dd>
-                </div>
-                <div>
-                  <dt>时间</dt>
-                  <dd>2023.09 - 2027.06</dd>
-                </div>
-                <div>
-                  <dt>成绩 / 英语</dt>
-                  <dd>GPA 78.7/100 · IELTS 6.0</dd>
-                </div>
-              </dl>
-            </article>
-
-            <article class="profile-card narrative-card">
-              <span>Engineering Focus</span>
-              <h3>连接理论、代码与硬件验证。</h3>
-              <p>
-                本科阶段，我持续训练通信系统分析、嵌入式开发、算法建模和数据处理能力，并在竞赛与项目中把理论转化为可测试的工程方案。
-              </p>
-              <div class="focus-tags" aria-label="研究与工程方向">
-                <span>无线通信</span>
-                <span>嵌入式控制</span>
-                <span>后端架构</span>
-                <span>数据建模</span>
-              </div>
-            </article>
-
-            <article class="profile-card skills-card">
-              <span>Skills</span>
-              <h3>工具与方法</h3>
-              <dl class="fact-list">
-                <div>
-                  <dt>Programming</dt>
-                  <dd>Python · MATLAB · SQL · Java</dd>
-                </div>
-                <div>
-                  <dt>Database</dt>
-                  <dd>MySQL · JSON Fields · Batch Insertion</dd>
-                </div>
-                <div>
-                  <dt>Framework</dt>
-                  <dd>Spring Boot · MyBatis-Plus · TensorFlow</dd>
-                </div>
-                <div>
-                  <dt>Hardware</dt>
-                  <dd>STM32 · MPU6050 · Encoders · Sensors</dd>
-                </div>
-              </dl>
-            </article>
-          </div>
+        <div class="hero-gallery" aria-label="代表作品预览">
+          <figure class="hero-work hero-work-main">
+            <img src="assets/xiangcanyan/portfolio-05.webp" alt="隐岫月亮湾景观设计总览" />
+            <figcaption><span>01</span> 隐岫 · 月亮湾景观设计</figcaption>
+          </figure>
+          <figure class="hero-work hero-work-small">
+            <img src="assets/xiangcanyan/portfolio-17.webp" alt="刘姐菜篮子品牌IP设计" />
+            <figcaption><span>04</span> 刘姐菜篮子 IP</figcaption>
+          </figure>
+          <figure class="hero-work hero-work-small">
+            <img src="assets/xiangcanyan/portfolio-21.webp" alt="青原文化IP设计" />
+            <figcaption><span>05</span> 青原文化 IP</figcaption>
+          </figure>
         </div>
+        <p class="hero-script" aria-hidden="true">在地 · 生长 · 共鸣</p>
       </section>
 
-      <section id="research" class="section research-section">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Technical Focus</div>
-            <h2>技术方向</h2>
-          </div>
-          <p>
-            将通信工程基础与可运行的系统项目结合，形成偏工程实现的能力结构。
+      <section id="about" class="about-section section-band" aria-labelledby="about-title">
+        <div class="about-portrait reveal">
+          <img src="assets/xiangcanyan/portrait.webp" alt="向粲妍个人照片" />
+          <div class="portrait-caption"><span>21 岁</span><span>中共党员</span></div>
+        </div>
+        <div class="about-content reveal">
+          <p class="section-kicker">关于我</p>
+          <h2 id="about-title">理性的空间骨架，<br />鲜活的视觉性格。</h2>
+          <p class="about-lead">
+            我是向粲妍，现就读于南昌大学建筑与设计学院环境设计专业，专注空间创意方向。专业排名 2/74，位于前 5%。
           </p>
-        </div>
-
-        <div class="research-layout">
-          <div class="signal-card" aria-label="通信链路示意">
-            <svg viewBox="0 0 620 360" role="img" aria-label="从发射端到接收端的通信链路示意图">
-              <defs>
-                <linearGradient id="trace" x1="0%" x2="100%" y1="0%" y2="0%">
-                  <stop offset="0%" stop-color="#d25b3f" />
-                  <stop offset="48%" stop-color="#2b6f88" />
-                  <stop offset="100%" stop-color="#d5a44c" />
-                </linearGradient>
-              </defs>
-              <path
-                class="grid-line"
-                d="M44 72 H576 M44 144 H576 M44 216 H576 M44 288 H576 M132 42 V318 M266 42 V318 M400 42 V318 M534 42 V318"
-              />
-              <path
-                class="trace-line"
-                d="M54 185 C94 106 132 104 168 182 S244 258 286 182 S360 105 402 184 S476 262 520 183 S572 120 592 150"
-              />
-              <circle cx="92" cy="126" r="6" />
-              <circle cx="286" cy="182" r="6" />
-              <circle cx="520" cy="183" r="6" />
-              <text x="54" y="54">Tx</text>
-              <text x="286" y="336">Channel</text>
-              <text x="548" y="54">Rx</text>
-            </svg>
-          </div>
-
-          <div class="research-list">
-            <article>
-              <span>01</span>
-              <h3>嵌入式系统调试</h3>
-              <p>围绕 STM32、IMU、编码器、电机控制与多传感器驱动，实践姿态估计、PWM 控制、PID 调参和状态机设计。</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>近距无线测距</h3>
-              <p>比较 UWB 与 Bluetooth Channel Sounding，理解 ToA、TDoA、RSSI、AoA 等定位方法的优势与边界。</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>AI标注后端开发</h3>
-              <p>使用 Spring Boot、DeepSeek-V3、JSON Schema、Provider Pattern 和 MySQL 构建结构化标注后端。</p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>网络优化建模</h3>
-              <p>在 5G 网络切片、销售预测和人群计数任务中使用启发式算法、博弈论、XGBoost 与深度学习模型。</p>
-            </article>
+          <p>
+            我关心设计如何回应真实环境与人的感受：从武夷山自然语境中的低干预建筑，到安义古村的非遗活态传承，再到图书馆咖啡空间与地方文化 IP，我习惯从场地、文化和使用者出发，把研究转化为清晰、有辨识度且能够落地的视觉方案。
+          </p>
+          <div class="interest-row" aria-label="兴趣爱好">
+            <span>设计</span><span>音乐</span><span>摄影</span><span>羽毛球</span>
           </div>
         </div>
+        <aside class="about-note reveal" aria-label="设计关键词">
+          <p>我的方法</p>
+          <strong>深研其里<br />空间思考<br />鲜活表达</strong>
+          <span>研究 · 空间 · 文化 · 视觉</span>
+        </aside>
       </section>
 
-      <section id="projects" class="section projects-section">
-        <div class="section-head">
+      <section id="work" class="work-section" aria-labelledby="work-title">
+        <header class="section-heading reveal">
           <div>
-            <div class="section-label">Research & Competition</div>
-            <h2>项目与竞赛经历</h2>
+            <p class="section-kicker">作品选集 · 2024—2026</p>
+            <h2 id="work-title">作品与实践</h2>
           </div>
-          <p>围绕嵌入式系统、无线测距、AI 后端、网络优化与数据建模展开；点击项目标题可打开对应 PDF 报告。</p>
-        </div>
+          <p>建筑景观、空间改造与品牌 IP 设计。每个项目均可展开查看作品集中的完整页面。</p>
+        </header>
 
         <div class="project-list">
-          <article class="project-item">
-            <div class="project-visual robot-visual" aria-hidden="true">
-              <span></span>
+          <article class="project project-dark reveal">
+            <div class="project-cover">
+              <button class="image-button" type="button" data-gallery="project-01" data-index="0" aria-label="放大隐岫项目图片">
+                <img src="assets/xiangcanyan/portfolio-05.webp" alt="隐岫月亮湾景观设计" loading="lazy" />
+              </button>
             </div>
-            <div class="project-content">
-              <p class="project-meta">05/2026 - 07/2026 · Software Development & System Debugging Lead</p>
-              <h3>
-                <a
-                  href="assets/docs/双轮自平衡小车硬件课程设计报告与使用说明书_通信2301班毕嵩尧 罗观华 陈钊.pdf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  智能两轮自平衡机器人
-                </a>
-              </h3>
+            <div class="project-copy">
+              <p class="project-number">01 / 景观与建筑</p>
+              <h3>隐岫</h3>
+              <p class="project-subtitle">中国国家公园武夷山月亮湾驿站及观景台概念设计</p>
               <p>
-                集成 STM32F103C8T6、MPU6050、旋转编码器、直流减速电机、HC-SR04 超声波传感器和 KY-026 火焰传感器，
-                完成多传感器驱动、姿态估计、轮速反馈、PWM 电机控制与 OLED 状态显示。
+                从《山海经》神话意象与武夷山地貌出发，以“巨石为骨、虚空为魂”组织建筑。混凝土单体、流动屋面与层叠平台共同回应茶田、溪流、竹林和云雾，形成低干预的自然文化体验场所。
               </p>
-              <p>
-                设计外环 PI、内环 PD 和转向控制器组成的级联控制架构，实现自平衡、前进、倒车、转向、低速自主导航、避障和红外火焰报警。
-              </p>
-            </div>
-          </article>
-
-          <article class="project-item">
-            <div class="project-visual ranging-visual" aria-hidden="true">
-              <span></span>
-            </div>
-            <div class="project-content">
-              <p class="project-meta">06/2026 · Author</p>
-              <h3>
-                <a
-                  href="assets/docs/UWB与Bluetooth Channel Sounding测距技术比较课程综述--通信2301班毕嵩尧.pdf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  UWB 与 Bluetooth Channel Sounding 测距技术综述
-                </a>
-              </h3>
-              <p>
-                阅读并综述超宽带 UWB 与 Bluetooth CS 在短距感知和室内定位中的发展背景、系统架构、工作原理、优势限制和应用场景。
-              </p>
-              <p>
-                对比 ToA、TDoA、RSSI、AoA 等定位方法，并绘制测量原理图、UWB 系统架构图和 Bluetooth CS 测距序列图。
-              </p>
+              <ul class="project-tags"><li>场地研究</li><li>景观规划</li><li>建筑概念</li><li>空间叙事</li></ul>
+              <details class="project-details">
+                <summary>展开完整项目 <span>4 页</span></summary>
+                <div class="project-pages" data-gallery-id="project-01">
+                  <button type="button" data-gallery="project-01" data-index="0"><img src="assets/xiangcanyan/portfolio-05.webp" alt="隐岫项目第1页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-01" data-index="1"><img src="assets/xiangcanyan/portfolio-06.webp" alt="隐岫项目第2页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-01" data-index="2"><img src="assets/xiangcanyan/portfolio-07.webp" alt="隐岫项目第3页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-01" data-index="3"><img src="assets/xiangcanyan/portfolio-08.webp" alt="隐岫项目第4页" loading="lazy" /></button>
+                </div>
+              </details>
             </div>
           </article>
 
-          <article class="project-item">
-            <div class="project-visual ai-visual" aria-hidden="true">
-              <span></span>
+          <article class="project project-paper reveal">
+            <div class="project-cover">
+              <button class="image-button" type="button" data-gallery="project-02" data-index="0" aria-label="放大村巷织遗项目图片">
+                <img src="assets/xiangcanyan/portfolio-09.webp" alt="村巷织遗非遗文化体验馆设计" loading="lazy" />
+              </button>
             </div>
-            <div class="project-content">
-              <p class="project-meta">01/2026 · Backend Developer · 主要负责后端开发</p>
-              <h3>
-                <a
-                  href="assets/docs/智能文本标注系统_U202314558_毕嵩尧_课程设计报告.pdf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  智能文本标注软件
-                </a>
-              </h3>
+            <div class="project-copy">
+              <p class="project-number">02 / 建筑与非遗</p>
+              <h3>村巷织遗</h3>
+              <p class="project-subtitle">基于活态传承的安义古村非遗文化体验馆设计</p>
               <p>
-                主要负责后端开发，使用 Spring Boot 3.2、Java 17 和 DeepSeek-V3 搭建服务架构，将非结构化文本自动转换为结构化标注，并通过 JSON Schema
-                约束降低 AI 幻觉。
+                项目选址于安义古村群京台村，以“非遗继续被看见、被学习、被使用”为核心，把古村生活、手艺传承、游客体验与社区共创连接起来。空间顺应山水肌理，以当代方式转译赣派建筑意象。
               </p>
-              <p>
-                设计规则匹配、AI 推理和 Provider Pattern 切换的双引擎框架；使用 MyBatis-Plus 批量插入、MySQL 8.0 JSON 字段和事务处理，
-                将千级记录批处理延迟降低约 90%。
-              </p>
-            </div>
-          </article>
-
-          <article class="project-item">
-            <div class="project-visual slice-visual" aria-hidden="true">
-              <span></span>
-            </div>
-            <div class="project-content">
-              <p class="project-meta">08/2025 · Leader · National Excellence Award</p>
-              <h3>
-                <a href="assets/docs/2025第六届华数杯竞赛论文 (1).pdf" target="_blank" rel="noopener">
-                  “华数杯”国际大学生数学建模竞赛：5G 网络切片资源管理
-                </a>
-              </h3>
-              <p>
-                面向 URLLC、eMBB、mMTC 切片在动态信道条件下的资源冲突，建立混合整数非线性规划与非线性规划模型。
-              </p>
-              <p>
-                设计贪心启发式算法、滚动时域优化和博弈论功率控制机制，在 MATLAB 与 Python 仿真中将系统资源稀疏度降低约
-                25%，QoS 达标率超过 95%。
-              </p>
+              <ul class="project-tags"><li>非遗研究</li><li>建筑改造</li><li>功能策划</li><li>在地材料</li></ul>
+              <details class="project-details">
+                <summary>展开完整项目 <span>4 页</span></summary>
+                <div class="project-pages" data-gallery-id="project-02">
+                  <button type="button" data-gallery="project-02" data-index="0"><img src="assets/xiangcanyan/portfolio-09.webp" alt="村巷织遗项目第1页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-02" data-index="1"><img src="assets/xiangcanyan/portfolio-10.webp" alt="村巷织遗项目第2页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-02" data-index="2"><img src="assets/xiangcanyan/portfolio-11.webp" alt="村巷织遗项目第3页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-02" data-index="3"><img src="assets/xiangcanyan/portfolio-12.webp" alt="村巷织遗项目第4页" loading="lazy" /></button>
+                </div>
+              </details>
             </div>
           </article>
 
-          <article class="project-item">
-            <div class="project-visual labview-visual" aria-hidden="true">
-              <span></span>
+          <article class="project project-light reveal">
+            <div class="project-cover">
+              <button class="image-button" type="button" data-gallery="project-03" data-index="0" aria-label="放大师咖啡项目图片">
+                <img src="assets/xiangcanyan/portfolio-13.webp" alt="南昌大学图书馆大师咖啡空间改造" loading="lazy" />
+              </button>
             </div>
-            <div class="project-content">
-              <p class="project-meta">LabVIEW Course Project · Virtual Instrument Design</p>
-              <h3>
-                <a
-                  href="assets/docs/基于LabVIEW的电话按键声音模拟器及自动识别实验报告.pdf"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  基于 LabVIEW 的电话按键声音模拟器及自动识别
-                </a>
-              </h3>
+            <div class="project-copy">
+              <p class="project-number">03 / 落地空间与品牌</p>
+              <h3 class="compact-title">大师咖啡</h3>
+              <p class="project-subtitle">南昌大学图书馆非遗 + 咖啡空间改造</p>
               <p>
-                基于 NI myDAQ、八路独立按键模块与音频输入链路，设计电话按键声音模拟器，实现按键输入、声音采集、频率测量与号码识别。
+                已落地并投入使用的图书馆二层空间改造。本人担任主设计负责人，负责方案设计、视觉延展与甲方沟通落地。项目融合非遗展示、咖啡社交、文化阅读，并以八大山人为原型建立“大师咖啡”品牌与 IP 系统。
               </p>
-              <p>
-                在 LabVIEW 中完成前面板、程序框图、DAQ 助手采集和识别流程搭建，并通过测试分析验证模拟拨号与自动识别功能。
-              </p>
-            </div>
-          </article>
-
-          <article class="project-item">
-            <div class="project-visual forecast-visual" aria-hidden="true">
-              <span></span>
-            </div>
-            <div class="project-content">
-              <p class="project-meta">07/2025 · Author · Kaggle Competition</p>
-              <h3>基于 POS 终端数据的销售预测与特征工程</h3>
-              <p>
-                为超过 300 万条 POS 销售记录构建自动化 ETL 流程，使用 Pandas 清洗噪声数据，并通过四分位距方法剔除异常值。
-              </p>
-              <p>
-                构造 50 维以上的时间序列特征空间，包括 Lag-1/7/30、滚动均值、滚动标准差和周期日期编码，使用 XGBoost 与
-                GridSearchCV 优化预测模型。
-              </p>
+              <ul class="project-tags"><li>主设计负责人</li><li>已落地</li><li>空间改造</li><li>品牌 IP</li></ul>
+              <details class="project-details">
+                <summary>展开完整项目 <span>4 页</span></summary>
+                <div class="project-pages" data-gallery-id="project-03">
+                  <button type="button" data-gallery="project-03" data-index="0"><img src="assets/xiangcanyan/portfolio-13.webp" alt="大师咖啡项目第1页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-03" data-index="1"><img src="assets/xiangcanyan/portfolio-14.webp" alt="大师咖啡项目第2页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-03" data-index="2"><img src="assets/xiangcanyan/portfolio-15.webp" alt="大师咖啡项目第3页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-03" data-index="3"><img src="assets/xiangcanyan/portfolio-16.webp" alt="大师咖啡项目第4页" loading="lazy" /></button>
+                </div>
+              </details>
             </div>
           </article>
 
-          <article class="project-item">
-            <div class="project-visual crowd-visual" aria-hidden="true">
-              <span></span>
+          <article class="project project-mint reveal">
+            <div class="project-cover">
+              <button class="image-button" type="button" data-gallery="project-04" data-index="0" aria-label="放大刘姐菜篮子项目图片">
+                <img src="assets/xiangcanyan/portfolio-17.webp" alt="刘姐菜篮子品牌IP设计" loading="lazy" />
+              </button>
             </div>
-            <div class="project-content">
-              <p class="project-meta">02/2024 - 04/2025 · Member</p>
-              <h3>中国国际大学生创新大赛：复杂人群场景计数模型</h3>
+            <div class="project-copy">
+              <p class="project-number">04 / 品牌与 IP 设计</p>
+              <h3>刘姐菜篮子</h3>
+              <p class="project-subtitle">绿色有机农产品品牌 IP 系统</p>
               <p>
-                针对公共空间人工人流统计效率低、误差高的问题，参与开发复杂人群场景下的深度学习计数项目。
+                以亲切的人物与拟人蔬菜角色建立有温度、有识别度的农产品品牌。视觉系统以绿色有机为主基调，通过角色设定、Logo、海报、表情包和文创周边形成统一且可传播的品牌体验。
               </p>
+              <ul class="project-tags"><li>角色设定</li><li>标志设计</li><li>界面设计</li><li>文创延展</li></ul>
+              <details class="project-details">
+                <summary>展开完整项目 <span>4 页</span></summary>
+                <div class="project-pages" data-gallery-id="project-04">
+                  <button type="button" data-gallery="project-04" data-index="0"><img src="assets/xiangcanyan/portfolio-17.webp" alt="刘姐菜篮子项目第1页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-04" data-index="1"><img src="assets/xiangcanyan/portfolio-18.webp" alt="刘姐菜篮子项目第2页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-04" data-index="2"><img src="assets/xiangcanyan/portfolio-19.webp" alt="刘姐菜篮子项目第3页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-04" data-index="3"><img src="assets/xiangcanyan/portfolio-20.webp" alt="刘姐菜篮子项目第4页" loading="lazy" /></button>
+                </div>
+              </details>
+            </div>
+          </article>
+
+          <article class="project project-orange reveal">
+            <div class="project-cover">
+              <button class="image-button" type="button" data-gallery="project-05" data-index="0" aria-label="放大青原文化项目图片">
+                <img src="assets/xiangcanyan/portfolio-21.webp" alt="青原文化IP形象设计" loading="lazy" />
+              </button>
+            </div>
+            <div class="project-copy">
+              <p class="project-number">05 / 地方文化与 IP</p>
+              <h3>非遗古郡<br />青原友为</h3>
+              <p class="project-subtitle">青原文化 IP 形象设计</p>
               <p>
-                从校园入口与图书馆采集多角度、多时段视频数据，使用 Python 抽帧、LabelMe 标注，并基于 TensorFlow 构建卷积神经网络模型。
+                提取青原山水、人文民俗和非遗符号，以富水河、龙舟、古村建筑、客家擂茶等元素塑造系列角色，通过海报、表情包与文创周边实现地方文化的年轻化转译。
               </p>
+              <ul class="project-tags"><li>文化研究</li><li>IP 形象</li><li>海报</li><li>文创产品</li></ul>
+              <details class="project-details">
+                <summary>展开完整项目 <span>2 页</span></summary>
+                <div class="project-pages two-pages" data-gallery-id="project-05">
+                  <button type="button" data-gallery="project-05" data-index="0"><img src="assets/xiangcanyan/portfolio-21.webp" alt="青原文化项目第1页" loading="lazy" /></button>
+                  <button type="button" data-gallery="project-05" data-index="1"><img src="assets/xiangcanyan/portfolio-22.webp" alt="青原文化项目第2页" loading="lazy" /></button>
+                </div>
+              </details>
             </div>
           </article>
         </div>
 
-        <div class="document-library" aria-labelledby="documents-title">
-          <div class="document-head">
-            <div>
-              <div class="section-label">Project Files</div>
-              <h3 id="documents-title">项目文档</h3>
-            </div>
+        <article class="other-work reveal">
+          <div>
+            <p class="project-number">06 / 其他创作</p>
+            <h3>跨媒介练习与比赛作品</h3>
+            <p>米兰二十四节气、立体构成、视传平面作业及全国大学生电动方程式大赛相关设计。</p>
           </div>
-          <div class="document-grid">
-            <a
-              href="assets/docs/双轮自平衡小车硬件课程设计报告与使用说明书_通信2301班毕嵩尧 罗观华 陈钊.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>PDF</span>
-              <strong>双轮自平衡小车系统设计</strong>
-              <em>硬件课程设计报告与使用说明书</em>
-            </a>
-            <a
-              href="assets/docs/UWB与Bluetooth Channel Sounding测距技术比较课程综述--通信2301班毕嵩尧.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>PDF</span>
-              <strong>UWB 与 Bluetooth CS 测距技术比较</strong>
-              <em>课程综述</em>
-            </a>
-            <a
-              href="assets/docs/智能文本标注系统_U202314558_毕嵩尧_课程设计报告.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>PDF</span>
-              <strong>智能文本标注软件</strong>
-              <em>软件课程设计报告</em>
-            </a>
-            <a href="assets/docs/2025第六届华数杯竞赛论文 (1).pdf" target="_blank" rel="noopener">
-              <span>PDF</span>
-              <strong>5G 网络切片无线资源管理</strong>
-              <em>华数杯数学建模竞赛论文</em>
-            </a>
-            <a
-              href="assets/docs/基于LabVIEW的电话按键声音模拟器及自动识别实验报告.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>PDF</span>
-              <strong>电话按键声音模拟器及自动识别</strong>
-              <em>LabVIEW 课程结课项目报告</em>
-            </a>
+          <button class="image-button" type="button" data-gallery="project-06" data-index="0" aria-label="放大其他作品图片">
+            <img src="assets/xiangcanyan/portfolio-23.webp" alt="向粲妍其他设计作品汇总" loading="lazy" />
+          </button>
+          <div class="hidden-gallery" data-gallery-id="project-06">
+            <img src="assets/xiangcanyan/portfolio-23.webp" alt="向粲妍其他作品" />
           </div>
+        </article>
+      </section>
+
+      <section id="research" class="research-section section-band" aria-labelledby="research-title">
+        <header class="research-heading reveal">
+          <p class="section-kicker">研究与竞赛</p>
+          <h2 id="research-title">设计之外，<br />保持研究的深度。</h2>
+        </header>
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <span>01 / 学术论文</span>
+            <h3>《基于深度学习的脑电信号解码》</h3>
+            <p class="research-meta">第一作者 · 在审</p>
+            <p>围绕人工智能与脑机接口技术展开研究，梳理运动想象脑电信号解码的主流算法体系，对比各类深度网络模型的性能优劣，分析信号处理与模型落地难题。成果投稿至集群计算领域期刊 <em>Cluster Computing</em>。</p>
+          </article>
+          <article class="research-card reveal">
+            <span>02 / 挑战杯</span>
+            <h3>废塑料资源化制备可持续航空燃油</h3>
+            <p class="research-meta">2025 第十五届“挑战杯” · 入围国赛选拔</p>
+            <p>项目依托微波催化热解技术，聚焦废塑料资源化利用与可持续航空燃油制备。团队拥有 18 项国家专利，并发表 20 余篇 SCI 论文。</p>
+          </article>
+          <article class="research-card reveal">
+            <span>03 / 电动方程式赛车</span>
+            <h3>中国大学生电动方程式赛车</h3>
+            <p class="research-meta">设计组组长、赛车手 · 全国三等奖</p>
+            <p>负责赛车车身造型与气动仿真设计，带领小组完成车身三维建模、车身整体设计、人机布局与外观落地，在气动性能与轻量化之间取得平衡。</p>
+          </article>
+          <article class="research-card reveal">
+            <span>04 / 服务设计</span>
+            <h3>《E触即达：校园信息数字社区重构》</h3>
+            <p class="research-meta">2025 双创训练项目</p>
+            <p>针对高校信息传达慢、意义不清晰等问题，以“全域信息聚合、智能高效触达、清朗社区共建”为目标，运用服务设计方法重构校园信息数字社区网络。</p>
+          </article>
         </div>
       </section>
 
-      <section id="notes" class="section notes-section">
-        <div class="section-shell">
-          <div class="section-title-row compact-title">
-            <div>
-              <div class="section-label">Methods</div>
-              <h2>能力标签</h2>
-            </div>
-            <p>通信、工程实现与数据建模三个方向。</p>
+      <section id="resume" class="resume-section" aria-labelledby="resume-title">
+        <header class="section-heading resume-heading reveal">
+          <div>
+            <p class="section-kicker">个人履历</p>
+            <h2 id="resume-title">履历与荣誉</h2>
           </div>
+          <p>学习、实践、组织与竞赛共同构成我的设计成长路径。</p>
+        </header>
 
-          <div class="method-board">
-            <aside class="method-overview" aria-label="能力结构概览">
-              <span>Approach</span>
-              <strong>从理论推导、系统实现到实验验证。</strong>
-              <p>
-                我把通信系统分析作为基础，把嵌入式开发与数据建模作为落地路径，逐步形成可复用、可测试、可解释的工程方法。
-              </p>
-            </aside>
+        <div class="resume-layout">
+          <div class="resume-column reveal">
+            <section class="resume-block">
+              <h3>教育经历</h3>
+              <article class="timeline-item">
+                <time>2023 - 至今</time>
+                <div><h4>南昌大学 · 建筑与设计学院</h4><p>环境设计专业，空间创意方向<br />绩点 3.61 · 专业排名 2/74（前 5%）</p></div>
+              </article>
+            </section>
 
-            <div class="note-grid">
-              <article>
-                <span>Communication</span>
-                <h3>通信系统分析</h3>
-                <p>围绕 UWB、Bluetooth CS、5G 网络切片、信噪比建模和香农容量公式展开技术分析与英文论文写作。</p>
-              </article>
-              <article>
-                <span>Engineering</span>
-                <h3>从算法到原型</h3>
-                <p>在机器人项目中完成硬件集成、嵌入式软件开发、控制逻辑优化和原型测试。</p>
-              </article>
-              <article>
-                <span>Data</span>
-                <h3>数据驱动建模</h3>
-                <p>使用 ETL、特征工程、交叉验证、深度学习和批处理优化方法，把复杂数据转化为可评估的模型结果。</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="cv" class="section cv-section" aria-labelledby="cv-title">
-        <div class="section-shell">
-          <div class="cv-layout refined-cv">
-            <div class="cv-summary">
-              <div class="section-label">Curriculum Vitae</div>
-            <h2 id="cv-title">教育背景、学生工作与荣誉奖项。</h2>
-              <p>
-                这部分集中呈现我的教育经历、学生组织工作和竞赛荣誉，便于快速了解我的学习轨迹与协作经历。
-              </p>
-              <div class="cv-tags" aria-label="简历关键词">
-                <span>HUST</span>
-                <span>Communication Engineering</span>
-                <span>Student Work</span>
-                <span>Scholarship</span>
+            <section class="resume-block">
+              <h3>实践经历</h3>
+              <div class="timeline-list">
+                <article class="timeline-item"><time>2025 - 2026</time><div><h4>“香樟领航”计划学生党员骨干培训班</h4><p>完成培训并结业。</p></div></article>
+                <article class="timeline-item"><time>2025</time><div><h4>南昌大学图书馆“大师咖啡”</h4><p>主导品牌设计与咖啡厅空间设计，项目已落地并投入使用。</p></div></article>
+                <article class="timeline-item"><time>2025</time><div><h4>南昌大学电动方程式赛车队</h4><p>设计组组长、赛车手，负责车身与品牌视觉设计。</p></div></article>
+                <article class="timeline-item"><time>2024</time><div><h4>DID 设计与创新发展国际研讨会</h4><p>参与标志设计与会议组织。</p></div></article>
+                <article class="timeline-item"><time>2 个月</time><div><h4>市自然与资源管理局</h4><p>基础规划科实习。</p></div></article>
+                <article class="timeline-item"><time>150 小时+</time><div><h4>班级与学生组织</h4><p>担任班级团支书、学生会文体部部长，累计志愿服务 150 小时以上。</p></div></article>
+                <article class="timeline-item"><time>交流活动</time><div><h4>中国套磁艺术探寻之旅</h4><p>负责并参与美国青少年来华冬令营交流活动。</p></div></article>
               </div>
-            </div>
-            <div class="timeline">
-              <article>
-                <time>09/2023 - 06/2027</time>
-                <h3>华中科技大学 · 电子信息与通信学院</h3>
-                <p>通信工程本科在读，GPA 78.7/100，IELTS 总分 6.0；技术能力包括 Python、MATLAB、SQL 与 MySQL。</p>
-              </article>
-              <article>
-                <time>10/2024 - Present</time>
-                <h3>AI Baby 志愿服务队 · 运营组成员</h3>
-                <p>
-                  标准化并数字化团队运营流程，使用 Excel 和在线协作工具建立考勤与绩效监测系统；协调运营与设计团队交付微信表情包和
-                  IP 文创产品。
-                </p>
-              </article>
-              <article>
-                <time>08/2025</time>
-                <h3>“华数杯”国际大学生数学建模竞赛 · 全国优秀奖</h3>
-                <p>负责团队技术论文英文写作，将容量公式推导、信噪比建模和收敛性能结果转化为学术化表达。</p>
-              </article>
-              <article>
-                <time>06/2024</time>
-                <h3>华中科技大学自强奋进奖学金</h3>
-                <p>本科阶段荣誉记录。</p>
-              </article>
-            </div>
+            </section>
           </div>
+
+          <section class="awards-panel reveal" aria-labelledby="awards-title">
+            <div class="awards-title-row"><h3 id="awards-title">获奖情况</h3><span>二十余项荣誉</span></div>
+            <ol class="awards-list">
+              <li><strong>米兰设计周</strong><span>国家级二等奖</span></li>
+              <li><strong>中国大学生电动方程式“蔚来杯”</strong><span>全国三等奖</span></li>
+              <li><strong>中国大学生广告艺术节学院奖</strong><span>全国优秀奖</span></li>
+              <li><strong>蓝桥杯</strong><span>省级二等奖</span></li>
+              <li><strong>蓝桥杯</strong><span>省级三等奖</span></li>
+              <li><strong>华夏奖文化艺术设计大赛视觉传达类</strong><span>铜奖</span></li>
+              <li><strong>智慧杯设计类</strong><span>国家级一等奖</span></li>
+              <li><strong>南昌大学附属康复医院设计</strong><span>一等奖</span></li>
+              <li><strong>CIFST 第三届国家乳业技术创新中心创新大赛</strong><span>优秀奖</span></li>
+              <li><strong>第十五届挑战杯南昌大学大学生创业计划竞赛</strong><span>特等奖</span></li>
+              <li><strong>第十五届挑战杯</strong><span>入围国赛选拔赛（进行中）</span></li>
+              <li><strong>南昌大学 2025 大学生创新大赛</strong><span>校级三等奖</span></li>
+              <li><strong>CIFST-2024 “洽洽杯”休闲食品短视频创新大赛</strong><span>优秀奖</span></li>
+              <li><strong>2025 大学生文化艺术节原创艺术作品设计大赛美术类</strong><span>一等奖</span></li>
+              <li><strong>致新杯知识竞赛</strong><span>优秀奖</span></li>
+              <li><strong>南昌大学 2025 年大学生课外学术科技作品展示会</strong><span>校级特等奖</span></li>
+              <li><strong>“指尖拾光·情悦暖冬”手语舞大赛</strong><span>二等奖</span></li>
+              <li><strong>南昌大学 2024 五史故事短剧大赛</strong><span>校级三等奖</span></li>
+              <li><strong>南昌大学 2024 炫彩活力绳</strong><span>校级三等奖</span></li>
+              <li><strong>“学党史、践党约、同奋斗、共筑梦”党史知识竞赛</strong><span>一等奖</span></li>
+              <li><strong>2023-2025 五星级寝室</strong><span>集体荣誉</span></li>
+              <li><strong>三好学生 · 优秀学生干部</strong><span>荣誉称号</span></li>
+              <li><strong>特等奖学金 · 一等奖学金</strong><span>奖学金</span></li>
+            </ol>
+          </section>
         </div>
       </section>
 
-      <section id="contact" class="contact-section">
-        <div class="contact-inner">
-          <div class="contact-panel">
-            <p class="eyebrow">Contact</p>
-            <h2>欢迎通过电话或邮件联系我。</h2>
-            <p class="contact-copy">
-              若需要进一步了解课程记录、项目档案或科研计划，可以直接发送邮件。为了保护隐私，主页不展示完整家庭住址。
-            </p>
-          </div>
-          <div class="contact-links" aria-label="联系方式">
-            <a href="tel:15235643094">
-              <span>Phone</span>
-              <strong>+86 152 3564 3094</strong>
-            </a>
-            <a href="mailto:u202314558@hust.edu.cn">
-              <span>HUST Email</span>
-              <strong>u202314558@hust.edu.cn</strong>
-            </a>
-            <a href="mailto:songyaobi@gmail.com">
-              <span>Personal Email</span>
-              <strong>songyaobi@gmail.com</strong>
-            </a>
-            <button class="copy-button" type="button" data-copy="u202314558@hust.edu.cn">
-              复制 HUST 邮箱
-            </button>
-          </div>
+      <section class="portfolio-download section-band reveal" aria-labelledby="portfolio-title">
+        <div class="portfolio-cover">
+          <img src="assets/xiangcanyan/portfolio-01.webp" alt="向粲妍设计与建筑作品集封面" loading="lazy" />
+        </div>
+        <div class="portfolio-download-copy">
+          <p class="section-kicker">完整作品集 · 24 页</p>
+          <h2 id="portfolio-title">完整作品集</h2>
+          <p>网页已收录主要项目与全部个人履历。需要查看原作品集的完整排版时，可打开经过网页优化的 24 页 PDF。</p>
+          <a class="primary-button" href="assets/xiangcanyan/xiang-canyan-portfolio.pdf" target="_blank" rel="noopener">打开作品集 <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <p class="section-kicker">联系我</p>
+        <h2 id="contact-title">期待与你交流<br />设计与新的可能。</h2>
+        <div class="contact-row">
+          <a href="tel:13064100096"><span>电话</span><strong>130 6410 0096</strong></a>
+          <button class="copy-button" type="button" data-copy="13064100096" aria-label="复制电话号码">复制号码</button>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>© <span id="year">2026</span> 毕嵩尧 · Bi Songyao</span>
-      <span>Communication Engineering · HUST</span>
+      <span>© <span id="year">2026</span> 向粲妍 · Xiang Canyan</span>
+      <span>南昌大学 · 建筑与设计学院</span>
     </footer>
+
+    <dialog class="lightbox" aria-label="作品大图浏览">
+      <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" aria-label="上一张">←</button>
+      <figure>
+        <img src="" alt="" />
+        <figcaption><span class="lightbox-count"></span><span class="lightbox-title"></span></figcaption>
+      </figure>
+      <button class="lightbox-arrow lightbox-next" type="button" aria-label="下一张">→</button>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

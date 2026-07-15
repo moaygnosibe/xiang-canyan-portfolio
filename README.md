@@ -1,5 +1,7 @@
-# Personal Homepage
+﻿# 向粲妍个人主页
 
-Static personal homepage for portfolio, CV, research notes, and contact information.
+南昌大学建筑与设计学院环境设计专业学生向粲妍的个人主页，包含个人简介、完整履历、科研竞赛、荣誉奖项与设计作品。
 
-This site can be published with GitHub Pages from the `main` branch.
+主页为静态网站，可通过 GitHub Pages 或现有 Sites 配置发布。作品图片均由个人作品集转换并针对网页浏览进行了压缩优化。
+
+标题使用开源字体“得意黑 Smiley Sans”，字体文件依据 SIL Open Font License 1.1 随项目保留。
