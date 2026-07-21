@@ -654,9 +654,15 @@ a {
 }
 
 .hero-heading .hero-name {
-  font-family: var(--font-brush);
-  font-size: clamp(86px, 10.5vw, 180px);
-  font-weight: 400;
+  width: clamp(380px, 43vw, 650px);
+  margin-inline: auto;
+  line-height: 0;
+}
+
+.hero-heading .hero-name img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .hero-heading .hero-manifesto {
@@ -1742,7 +1748,7 @@ a {
   }
 
   .hero-heading .hero-name {
-    font-size: clamp(66px, 22vw, 92px);
+    width: min(88vw, 520px);
   }
 
   .hero-heading .hero-manifesto {
