@@ -4,13 +4,13 @@ const mobileMenu = document.querySelector("#mobile-menu");
 const navLinks = [...document.querySelectorAll(".desktop-nav a")];
 const copyButton = document.querySelector(".copy-button");
 const year = document.querySelector("#year");
-const workSection = document.querySelector("#work");
+const aboutSection = document.querySelector("#about");
 const heroSection = document.querySelector(".hero");
 const heroReveal = document.querySelector(".hero-reveal");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function updateHeader() {
-  const switchPoint = workSection.offsetTop - Math.min(window.innerHeight * 0.16, 180);
+  const switchPoint = aboutSection.offsetTop - Math.min(window.innerHeight * 0.3, 220);
   header.classList.toggle("is-scrolled", window.scrollY >= switchPoint);
 }
 
