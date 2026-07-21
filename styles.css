@@ -15,8 +15,8 @@
 }
 
 @font-face {
-  font-family: "Zhi Mang Xing Display";
-  src: url("assets/fonts/zhi-mang-xing-display.woff2") format("woff2");
+  font-family: "Ma Shan Zheng Display";
+  src: url("assets/fonts/ma-shan-zheng-display.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -40,7 +40,7 @@
   --font-song: "STSong", "Songti SC", "Noto Serif SC", Georgia, serif;
   --font-kai: "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif;
   --font-brush: "Ma Shan Zheng Name", "STKaiti", "KaiTi", "Kaiti SC", cursive;
-  --font-script: "Zhi Mang Xing Display", "STKaiti", "KaiTi", "Kaiti SC", cursive;
+  --font-script: "Ma Shan Zheng Display", "STKaiti", "KaiTi", "Kaiti SC", cursive;
   --font-display: "Smiley Sans", "Microsoft YaHei", "PingFang SC", sans-serif;
 }
 
