@@ -15,9 +15,9 @@
       property="og:description"
       content="环境设计、空间创意、品牌与IP设计作品及个人履历。"
     />
-    <meta property="og:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview.webp" />
+    <meta property="og:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview-v2.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview.webp" />
+    <meta name="twitter:image" content="{{SITE_ORIGIN}}/assets/xiangcanyan/social-preview-v2.png" />
     <link rel="preload" as="image" href="assets/xiangcanyan/portfolio-05.webp" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -37,6 +37,14 @@
         <a href="#resume">履历</a>
         <a href="#contact">联系</a>
       </nav>
+      <a
+        class="header-portfolio-link"
+        href="assets/xiangcanyan/xiang-canyan-portfolio.pdf"
+        target="_blank"
+        rel="noopener"
+      >
+        完整作品集 <span aria-hidden="true">↗</span>
+      </a>
       <button
         class="menu-button"
         type="button"
@@ -58,41 +66,40 @@
 
     <main id="main">
       <section id="top" class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">南昌大学 · 环境设计 · 空间创意</p>
-          <h1 id="hero-title"><span>向粲妍</span><em>Xiang Canyan</em></h1>
-          <p class="hero-lead">在空间、文化与视觉之间，寻找既有秩序又有温度的表达。</p>
-          <p class="hero-description">
-            南昌大学建筑与设计学院环境设计专业本科生，空间创意方向。我的实践横跨建筑与景观、公共空间改造、品牌及 IP 视觉设计。
-          </p>
-          <div class="hero-actions">
-            <a class="primary-button" href="#work">浏览作品 <span aria-hidden="true">↓</span></a>
-            <a class="text-link" href="assets/xiangcanyan/xiang-canyan-portfolio.pdf" target="_blank" rel="noopener">
-              完整作品集 PDF <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <dl class="hero-facts" aria-label="个人信息概览">
-            <div><dt>绩点</dt><dd>3.61</dd></div>
-            <div><dt>专业排名</dt><dd>2 / 74</dd></div>
-            <div><dt>方向</dt><dd>空间创意</dd></div>
-          </dl>
+        <div
+          class="hero-media hero-base"
+          role="img"
+          aria-label="向粲妍隐岫月亮湾景观设计作品中的山林建筑场景"
+        ></div>
+        <div class="hero-media hero-reveal" aria-hidden="true"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <div class="hero-heading">
+          <p class="hero-eyebrow hero-anim hero-fade">南昌大学 · 环境设计 · 空间创意</p>
+          <h1 id="hero-title">
+            <span class="hero-name hero-anim hero-rise">向粲妍</span>
+            <span class="hero-manifesto hero-anim hero-rise">空间有形，叙事有温度</span>
+          </h1>
         </div>
 
-        <div class="hero-gallery" aria-label="代表作品预览">
-          <figure class="hero-work hero-work-main">
-            <img src="assets/xiangcanyan/portfolio-05.webp" alt="隐岫月亮湾景观设计总览" />
-            <figcaption><span>01</span> 隐岫 · 月亮湾景观设计</figcaption>
-          </figure>
-          <figure class="hero-work hero-work-small">
-            <img src="assets/xiangcanyan/portfolio-17.webp" alt="刘姐菜篮子品牌IP设计" />
-            <figcaption><span>04</span> 刘姐菜篮子 IP</figcaption>
-          </figure>
-          <figure class="hero-work hero-work-small">
-            <img src="assets/xiangcanyan/portfolio-21.webp" alt="青原文化IP设计" />
-            <figcaption><span>05</span> 青原文化 IP</figcaption>
-          </figure>
+        <div class="hero-intro hero-anim hero-fade">
+          <p>
+            南昌大学建筑与设计学院环境设计专业本科生。以空间为骨架，以在地文化为线索，让研究、体验与视觉表达彼此生长。
+          </p>
         </div>
-        <p class="hero-script" aria-hidden="true">在地 · 生长 · 共鸣</p>
+
+        <div class="hero-note hero-anim hero-fade">
+          <p>
+            我的实践横跨建筑景观、公共空间改造、品牌与 IP 视觉设计，在秩序与鲜活之间寻找属于每个场地的叙事。
+          </p>
+          <a class="hero-cta" href="#work">
+            <span>进入作品</span><span class="hero-cta-icon" aria-hidden="true">↘</span>
+          </a>
+        </div>
+
+        <p class="hero-project-label hero-anim hero-fade">
+          <span>01</span> 隐岫 · 月亮湾景观设计
+        </p>
       </section>
 
       <section id="about" class="about-section section-band" aria-labelledby="about-title">

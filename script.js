@@ -6,28 +6,12 @@ const copyButton = document.querySelector(".copy-button");
 const year = document.querySelector("#year");
 const workSection = document.querySelector("#work");
 const heroSection = document.querySelector(".hero");
+const heroReveal = document.querySelector(".hero-reveal");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function updateHeader() {
   const switchPoint = workSection.offsetTop - Math.min(window.innerHeight * 0.16, 180);
   header.classList.toggle("is-scrolled", window.scrollY >= switchPoint);
-}
-
-function updateVisualMotion() {
-  if (reduceMotion.matches) {
-    heroSection.style.removeProperty("--scroll-shift");
-    heroSection.style.removeProperty("--script-shift");
-    return;
-  }
-
-  const progress = Math.min(Math.max(window.scrollY / heroSection.offsetHeight, 0), 1);
-  heroSection.style.setProperty("--scroll-shift", `${progress * 24}px`);
-  heroSection.style.setProperty("--script-shift", `${progress * -8}px`);
-}
-
-function updatePageMotion() {
-  updateHeader();
-  updateVisualMotion();
 }
 
 function closeMenu() {
@@ -37,11 +21,68 @@ function closeMenu() {
   document.body.classList.remove("menu-locked");
 }
 
-updatePageMotion();
+const spotlight = {
+  targetX: 0,
+  targetY: 0,
+  currentX: 0,
+  currentY: 0,
+  frame: 0,
+  initialized: false,
+};
+
+function writeSpotlightPosition(x, y) {
+  heroSection.style.setProperty("--spot-x", `${x}px`);
+  heroSection.style.setProperty("--spot-y", `${y}px`);
+}
+
+function setInitialSpotlight() {
+  const rect = heroSection.getBoundingClientRect();
+  spotlight.targetX = rect.width * 0.68;
+  spotlight.targetY = rect.height * 0.49;
+  spotlight.currentX = spotlight.targetX;
+  spotlight.currentY = spotlight.targetY;
+  spotlight.initialized = true;
+  writeSpotlightPosition(spotlight.currentX, spotlight.currentY);
+}
+
+function renderSpotlight() {
+  spotlight.currentX += (spotlight.targetX - spotlight.currentX) * 0.1;
+  spotlight.currentY += (spotlight.targetY - spotlight.currentY) * 0.1;
+  writeSpotlightPosition(spotlight.currentX, spotlight.currentY);
+
+  const distance = Math.abs(spotlight.targetX - spotlight.currentX) + Math.abs(spotlight.targetY - spotlight.currentY);
+  if (distance > 0.2) {
+    spotlight.frame = window.requestAnimationFrame(renderSpotlight);
+  } else {
+    spotlight.frame = 0;
+  }
+}
+
+function moveSpotlight(event) {
+  if (!heroReveal) return;
+  const rect = heroSection.getBoundingClientRect();
+  spotlight.targetX = Math.min(Math.max(event.clientX - rect.left, 0), rect.width);
+  spotlight.targetY = Math.min(Math.max(event.clientY - rect.top, 0), rect.height);
+
+  if (reduceMotion.matches) {
+    spotlight.currentX = spotlight.targetX;
+    spotlight.currentY = spotlight.targetY;
+    writeSpotlightPosition(spotlight.currentX, spotlight.currentY);
+    return;
+  }
+
+  if (!spotlight.frame) spotlight.frame = window.requestAnimationFrame(renderSpotlight);
+}
+
+setInitialSpotlight();
+updateHeader();
 year.textContent = String(new Date().getFullYear());
-window.addEventListener("scroll", updatePageMotion, { passive: true });
-window.addEventListener("resize", updatePageMotion);
-reduceMotion.addEventListener("change", updateVisualMotion);
+window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("resize", () => {
+  updateHeader();
+  if (!spotlight.initialized || window.scrollY < heroSection.offsetHeight) setInitialSpotlight();
+});
+heroSection.addEventListener("pointermove", moveSpotlight, { passive: true });
 
 menuButton.addEventListener("click", () => {
   const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
