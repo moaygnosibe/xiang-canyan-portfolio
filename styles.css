@@ -1115,10 +1115,12 @@ a {
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(63, 126, 112, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(63, 126, 112, 0.055) 1px, transparent 1px);
-  background-position: center top;
-  background-size: 76px 76px;
+    url("assets/motifs/work-contours.svg"),
+    linear-gradient(rgba(63, 126, 112, 0.034) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63, 126, 112, 0.034) 1px, transparent 1px);
+  background-position: right -140px top 280px, center top, center top;
+  background-repeat: repeat-y, repeat, repeat;
+  background-size: clamp(520px, 70vw, 900px) 1100px, 76px 76px, 76px 76px;
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 94%, transparent 100%);
   mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 94%, transparent 100%);
   pointer-events: none;
@@ -1169,6 +1171,9 @@ a {
 }
 
 .project {
+  --project-motif: url("assets/motifs/project-topography.svg");
+  --project-motif-position: right -105px bottom -54px;
+  --project-motif-size: 118% auto;
   --project-line: rgba(63, 126, 112, 0.16);
   --project-accent: rgba(232, 120, 95, 0.42);
   position: relative;
@@ -1237,6 +1242,7 @@ a {
   inset: 0;
   z-index: 0;
   background-image:
+    var(--project-motif),
     linear-gradient(var(--project-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--project-line) 1px, transparent 1px),
     linear-gradient(
@@ -1245,10 +1251,12 @@ a {
       var(--project-line) 72% calc(72% + 1px),
       transparent calc(72% + 1px) 100%
     );
-  background-size: 38px 38px, 38px 38px, 100% 100%;
-  -webkit-mask-image: linear-gradient(112deg, transparent 12%, transparent 45%, #000 84%, #000 100%);
-  mask-image: linear-gradient(112deg, transparent 12%, transparent 45%, #000 84%, #000 100%);
-  opacity: 0.7;
+  background-position: var(--project-motif-position), left top, left top, left top;
+  background-repeat: no-repeat, repeat, repeat, no-repeat;
+  background-size: var(--project-motif-size), 38px 38px, 38px 38px, 100% 100%;
+  -webkit-mask-image: linear-gradient(112deg, transparent 8%, transparent 30%, #000 74%, #000 100%);
+  mask-image: linear-gradient(112deg, transparent 8%, transparent 30%, #000 74%, #000 100%);
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -1314,6 +1322,7 @@ a {
 }
 
 .project-dark {
+  --project-motif: url("assets/motifs/project-topography.svg");
   --project-line: rgba(71, 118, 128, 0.19);
   --project-accent: rgba(232, 120, 95, 0.46);
   background: linear-gradient(135deg, #cfdee0 0%, #dce9e4 100%);
@@ -1325,24 +1334,36 @@ a {
 }
 
 .project-paper {
+  --project-motif: url("assets/motifs/project-courtyard.svg");
+  --project-motif-position: right -70px bottom -38px;
+  --project-motif-size: 112% auto;
   --project-line: rgba(72, 112, 86, 0.16);
   --project-accent: rgba(126, 154, 119, 0.46);
   background: linear-gradient(135deg, #e8eee8 0%, #d5e1d7 100%);
 }
 
 .project-light {
+  --project-motif: url("assets/motifs/project-rhythm.svg");
+  --project-motif-position: right -78px bottom -42px;
+  --project-motif-size: 112% auto;
   --project-line: rgba(184, 125, 105, 0.15);
   --project-accent: rgba(213, 135, 107, 0.48);
   background: linear-gradient(135deg, #f7f8f4 0%, #f0dfd8 100%);
 }
 
 .project-mint {
+  --project-motif: url("assets/motifs/project-organic.svg");
+  --project-motif-position: right -82px bottom -46px;
+  --project-motif-size: 114% auto;
   --project-line: rgba(69, 132, 105, 0.17);
   --project-accent: rgba(225, 143, 89, 0.48);
   background: linear-gradient(135deg, #cde9d9 0%, #e7edc8 100%);
 }
 
 .project-orange {
+  --project-motif: url("assets/motifs/project-river.svg");
+  --project-motif-position: right -72px bottom -34px;
+  --project-motif-size: 114% auto;
   --project-line: rgba(179, 115, 67, 0.17);
   --project-accent: rgba(66, 117, 104, 0.5);
   background: linear-gradient(135deg, #f3d793 0%, #efb39c 100%);
@@ -1442,6 +1463,7 @@ a {
   inset: 0;
   z-index: 0;
   background-image:
+    url("assets/motifs/other-modules.svg"),
     linear-gradient(rgba(63, 126, 112, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(63, 126, 112, 0.12) 1px, transparent 1px),
     linear-gradient(
@@ -1450,7 +1472,9 @@ a {
       rgba(232, 120, 95, 0.26) 64% calc(64% + 1px),
       transparent calc(64% + 1px) 100%
     );
-  background-size: 42px 42px, 42px 42px, 100% 100%;
+  background-position: left -150px bottom -88px, left top, left top, left top;
+  background-repeat: no-repeat, repeat, repeat, no-repeat;
+  background-size: 66% auto, 42px 42px, 42px 42px, 100% 100%;
   -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 72%);
   mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 72%);
   opacity: 0.62;
