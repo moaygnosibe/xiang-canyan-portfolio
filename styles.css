@@ -872,17 +872,6 @@ a {
   filter: saturate(0.9) contrast(1.02) brightness(1.03);
 }
 
-.portrait-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 13px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
 .section-kicker {
   display: flex;
   align-items: center;
@@ -981,6 +970,12 @@ a {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.35;
+}
+
+.about-facts .identity-fact dd {
+  color: var(--ink-soft);
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .interest-row {
