@@ -33,6 +33,14 @@ const spotlight = {
 function writeSpotlightPosition(x, y) {
   heroSection.style.setProperty("--spot-x", `${x}px`);
   heroSection.style.setProperty("--spot-y", `${y}px`);
+
+  if (!reduceMotion.matches) {
+    const rect = heroSection.getBoundingClientRect();
+    const sceneX = (0.5 - x / Math.max(rect.width, 1)) * 12;
+    const sceneY = (0.5 - y / Math.max(rect.height, 1)) * 7;
+    heroSection.style.setProperty("--scene-x", `${sceneX}px`);
+    heroSection.style.setProperty("--scene-y", `${sceneY}px`);
+  }
 }
 
 function setInitialSpotlight() {

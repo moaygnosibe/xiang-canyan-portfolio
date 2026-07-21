@@ -501,10 +501,10 @@ a {
 
 @keyframes heroBaseZoom {
   from {
-    transform: scale(1.1);
+    transform: translate3d(var(--scene-x), var(--scene-y), 0) scale(1.1);
   }
   to {
-    transform: scale(1);
+    transform: translate3d(var(--scene-x), var(--scene-y), 0) scale(1.04);
   }
 }
 
@@ -536,6 +536,8 @@ a {
   --spot-x: 68%;
   --spot-y: 49%;
   --spot-radius: clamp(170px, 18vw, 280px);
+  --scene-x: 0px;
+  --scene-y: 0px;
   isolation: isolate;
   height: 100dvh;
   min-height: 680px;
@@ -553,20 +555,31 @@ a {
 }
 
 .hero-media {
-  background-position: center;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  background-image: var(--hero-image);
+  background-position: center 48%;
   background-repeat: no-repeat;
   background-size: cover;
+  transform: translate3d(var(--scene-x), var(--scene-y), 0) scale(1.04);
+  animation: heroBaseZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 220ms ease-out;
 }
 
 .hero-base {
+  --hero-image: url("assets/xiangcanyan/hero-nature-v1.webp");
   z-index: 0;
-  background-image: url("assets/xiangcanyan/portfolio-05.webp");
-  animation: heroBaseZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-reveal {
+  --hero-image: url("assets/xiangcanyan/hero-city-v1.webp");
   z-index: 1;
-  background-image: url("assets/xiangcanyan/portfolio-08.webp");
   pointer-events: none;
   -webkit-mask-image: radial-gradient(
     circle var(--spot-radius) at var(--spot-x) var(--spot-y),
@@ -592,7 +605,7 @@ a {
 .hero-vignette {
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(7, 12, 12, 0.62) 0%, rgba(7, 12, 12, 0.08) 35%, rgba(7, 12, 12, 0.14) 58%, rgba(7, 12, 12, 0.78) 100%),
+    linear-gradient(180deg, rgba(7, 12, 12, 0.72) 0%, rgba(7, 12, 12, 0.18) 38%, rgba(7, 12, 12, 0.18) 58%, rgba(7, 12, 12, 0.82) 100%),
     linear-gradient(90deg, rgba(6, 12, 11, 0.3) 0%, transparent 34%, transparent 68%, rgba(6, 12, 11, 0.2) 100%);
   pointer-events: none;
 }
@@ -1914,7 +1927,7 @@ a {
     transform: none;
   }
 
-  .hero-base {
-    transform: scale(1);
+  .hero-media::before {
+    transform: scale(1.04);
   }
 }
