@@ -659,10 +659,11 @@ a {
   line-height: 0;
 }
 
-.hero-heading .hero-name img {
+.hero-heading .hero-name svg {
   display: block;
   width: 100%;
   height: auto;
+  color: #f8f4eb;
 }
 
 .hero-heading .hero-manifesto {
