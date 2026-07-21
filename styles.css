@@ -6,6 +6,14 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Ma Shan Zheng Name";
+  src: url("assets/fonts/ma-shan-zheng-name.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   --ink: #171b19;
   --ink-soft: #2b302e;
@@ -23,6 +31,7 @@
   --font-sans: Inter, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-song: "STSong", "Songti SC", "Noto Serif SC", Georgia, serif;
   --font-kai: "STKaiti", "KaiTi", "Kaiti SC", "FangSong", serif;
+  --font-brush: "Ma Shan Zheng Name", "STKaiti", "KaiTi", "Kaiti SC", cursive;
   --font-display: "Smiley Sans", "Microsoft YaHei", "PingFang SC", sans-serif;
 }
 
@@ -129,7 +138,7 @@ a {
   flex: 0 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.64);
   border-radius: 50%;
-  font-family: var(--font-display);
+  font-family: var(--font-brush);
   font-size: 17px;
   transition: border-color 240ms ease;
 }
@@ -140,9 +149,9 @@ a {
 }
 
 .brand-name {
-  font-family: var(--font-kai);
-  font-size: 20px;
-  font-weight: 600;
+  font-family: var(--font-brush);
+  font-size: 22px;
+  font-weight: 400;
   white-space: nowrap;
 }
 
@@ -645,15 +654,15 @@ a {
 }
 
 .hero-heading .hero-name {
-  font-family: var(--font-kai);
-  font-size: clamp(78px, 9.5vw, 164px);
-  font-weight: 500;
+  font-family: var(--font-brush);
+  font-size: clamp(86px, 10.5vw, 180px);
+  font-weight: 400;
 }
 
 .hero-heading .hero-manifesto {
-  margin-top: -4px;
-  font-family: var(--font-display);
-  font-size: clamp(42px, 6.2vw, 104px);
+  margin-top: 12px;
+  font-family: var(--font-song);
+  font-size: clamp(28px, 3.2vw, 54px);
   font-weight: 400;
   line-height: 1.03;
 }
@@ -1737,9 +1746,9 @@ a {
   }
 
   .hero-heading .hero-manifesto {
-    margin-top: 4px;
-    font-size: clamp(34px, 10.8vw, 48px);
-    line-height: 1.08;
+    margin-top: 8px;
+    font-size: clamp(27px, 7.8vw, 34px);
+    line-height: 1.15;
   }
 
   .hero-eyebrow {
