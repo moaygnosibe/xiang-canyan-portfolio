@@ -26,7 +26,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=16" />
+    <link rel="stylesheet" href="styles.css?v=17" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -111,17 +111,30 @@
             <div class="identity-fact"><dt>21<small>岁</small></dt><dd>中共党员</dd></div>
           </dl>
         </div>
-        <aside class="about-note reveal" aria-label="我的设计方法">
+        <aside class="about-note reveal" aria-labelledby="approach-title">
           <p class="about-note-kicker">我的设计方法</p>
-          <ol class="approach-list">
-            <li><span>01</span><div><strong>读懂场地</strong><p>从环境、文化与使用者的真实感受出发</p></div></li>
-            <li><span>02</span><div><strong>建立秩序</strong><p>把研究转译为空间结构与清晰逻辑</p></div></li>
-            <li><span>03</span><div><strong>鲜活表达</strong><p>用视觉、材质与叙事留下可感知的记忆</p></div></li>
-          </ol>
+          <div class="approach-fan" data-approach-fan data-active="0">
+            <div class="fan-arc" aria-hidden="true">
+              <div class="fan-wheel"></div>
+              <button class="fan-tab is-active" type="button" data-index="0" data-title="读懂场地" data-description="从环境、文化与使用者的真实感受出发" title="读懂场地">01</button>
+              <button class="fan-tab" type="button" data-index="1" data-title="建立秩序" data-description="把研究转译为空间结构与清晰逻辑" title="建立秩序">02</button>
+              <button class="fan-tab" type="button" data-index="2" data-title="鲜活表达" data-description="用视觉、材质与叙事留下可感知的记忆" title="鲜活表达">03</button>
+            </div>
+            <div class="fan-content" aria-live="polite">
+              <span class="fan-count">01 / 03</span>
+              <h3 id="approach-title">读懂场地</h3>
+              <p>从环境、文化与使用者的真实感受出发</p>
+            </div>
+            <div class="fan-controls" aria-label="切换设计方法">
+              <button type="button" data-fan-prev aria-label="上一个设计方法" title="上一个">←</button>
+              <span aria-hidden="true"></span>
+              <button type="button" data-fan-next aria-label="下一个设计方法" title="下一个">→</button>
+            </div>
+          </div>
         </aside>
         <div class="about-focus reveal">
           <p>
-            从武夷山自然语境中的低干预建筑，到安义古村的非遗活态传承，再到图书馆咖啡空间与地方文化 IP，我持续在自然、城市与人的日常之间寻找设计的落点。
+            从自然景观、乡村更新到空间与文化 IP，我通过研究、叙事和视觉转译，让地域文化以新的方式被感知、使用与传播。
           </p>
           <div class="interest-row" aria-label="兴趣爱好">
             <span>设计</span><span>音乐</span><span>摄影</span><span>羽毛球</span>
@@ -283,6 +296,20 @@
         </article>
       </section>
 
+      <section class="trail-section" aria-labelledby="trail-title">
+        <header class="trail-heading reveal">
+          <p class="section-kicker">作品游迹</p>
+          <h2 id="trail-title">片段，在场域中生长</h2>
+          <p>建筑、空间与视觉项目的过程切片</p>
+        </header>
+        <div class="trail-stage reveal" data-trail-stage>
+          <img class="trail-anchor trail-anchor-one" src="assets/xiangcanyan/portfolio-05.webp" alt="隐岫项目作品片段" loading="lazy" />
+          <img class="trail-anchor trail-anchor-two" src="assets/xiangcanyan/portfolio-13.webp" alt="大师咖啡项目作品片段" loading="lazy" />
+          <img class="trail-anchor trail-anchor-three" src="assets/xiangcanyan/portfolio-21.webp" alt="青原文化项目作品片段" loading="lazy" />
+          <span class="trail-index" aria-hidden="true">PROJECT FRAGMENTS · 01—06</span>
+        </div>
+      </section>
+
       <section id="research" class="research-section section-band" aria-labelledby="research-title">
         <header class="research-heading reveal">
           <p class="section-kicker">研究与竞赛</p>
@@ -344,7 +371,7 @@
                 <article class="timeline-item"><time>2024</time><div><h4>DID 设计与创新发展国际研讨会</h4><p>参与标志设计与会议组织。</p></div></article>
                 <article class="timeline-item"><time>2 个月</time><div><h4>市自然与资源管理局</h4><p>基础规划科实习。</p></div></article>
                 <article class="timeline-item"><time>150 小时+</time><div><h4>班级与学生组织</h4><p>担任班级团支书、学生会文体部部长，累计志愿服务 150 小时以上。</p></div></article>
-                <article class="timeline-item"><time>交流活动</time><div><h4>中国套磁艺术探寻之旅</h4><p>负责并参与美国青少年来华冬令营交流活动。</p></div></article>
+                <article class="timeline-item"><time>交流活动</time><div><h4>陶瓷艺术之旅</h4><p>负责并参与美国青少年来华冬令营交流活动。</p></div></article>
               </div>
             </section>
           </div>
@@ -393,11 +420,22 @@
       </section>
 
       <section id="contact" class="contact-section" aria-labelledby="contact-title">
-        <p class="section-kicker">联系我</p>
-        <h2 id="contact-title">期待与你交流<br />设计与新的可能。</h2>
-        <div class="contact-row">
-          <a href="tel:13064100096"><span>电话</span><strong>130 6410 0096</strong></a>
-          <button class="copy-button" type="button" data-copy="13064100096" aria-label="复制电话号码">复制号码</button>
+        <div class="contact-intro reveal">
+          <p class="section-kicker">联系我</p>
+          <h2 id="contact-title">让新的连接<br />继续生长。</h2>
+          <p>关于设计、研究、合作与新的场域，欢迎来信。</p>
+        </div>
+        <div class="contact-field reveal">
+          <div class="contact-channel">
+            <span class="contact-coordinate">01 / MAIL</span>
+            <a href="mailto:8815123159@email.edu.com">8815123159@email.edu.com</a>
+            <button class="copy-button" type="button" data-copy="8815123159@email.edu.com" aria-label="复制邮箱地址">复制邮箱</button>
+          </div>
+          <div class="contact-channel">
+            <span class="contact-coordinate">02 / PHONE</span>
+            <a href="tel:13064100096">130 6410 0096</a>
+            <button class="copy-button" type="button" data-copy="13064100096" aria-label="复制电话号码">复制号码</button>
+          </div>
         </div>
       </section>
     </main>
@@ -417,6 +455,6 @@
       <button class="lightbox-arrow lightbox-next" type="button" aria-label="下一张">→</button>
     </dialog>
 
-    <script src="script.js?v=16"></script>
+    <script src="script.js?v=17"></script>
   </body>
 </html>

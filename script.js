@@ -2,7 +2,7 @@ const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector("#mobile-menu");
 const navLinks = [...document.querySelectorAll(".desktop-nav a")];
-const copyButton = document.querySelector(".copy-button");
+const copyButtons = [...document.querySelectorAll(".copy-button")];
 const year = document.querySelector("#year");
 const aboutSection = document.querySelector("#about");
 const heroSection = document.querySelector(".hero");
@@ -144,6 +144,97 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
+const approachFan = document.querySelector("[data-approach-fan]");
+
+if (approachFan) {
+  const fanTabs = [...approachFan.querySelectorAll(".fan-tab")];
+  const fanContent = approachFan.querySelector(".fan-content");
+  const fanCount = approachFan.querySelector(".fan-count");
+  const fanTitle = fanContent.querySelector("h3");
+  const fanDescription = fanContent.querySelector("p");
+  const fanPrevious = approachFan.querySelector("[data-fan-prev]");
+  const fanNext = approachFan.querySelector("[data-fan-next]");
+  let fanIndex = 0;
+  let fanTimer = 0;
+  let fanChangeTimer = 0;
+
+  function showApproach(nextIndex) {
+    fanIndex = (nextIndex + fanTabs.length) % fanTabs.length;
+    const activeTab = fanTabs[fanIndex];
+    approachFan.dataset.active = String(fanIndex);
+    fanTabs.forEach((tab, index) => tab.classList.toggle("is-active", index === fanIndex));
+    fanContent.classList.add("is-changing");
+    window.clearTimeout(fanChangeTimer);
+    fanChangeTimer = window.setTimeout(() => {
+      fanCount.textContent = `${String(fanIndex + 1).padStart(2, "0")} / ${String(fanTabs.length).padStart(2, "0")}`;
+      fanTitle.textContent = activeTab.dataset.title;
+      fanDescription.textContent = activeTab.dataset.description;
+      fanContent.classList.remove("is-changing");
+    }, reduceMotion.matches ? 0 : 150);
+  }
+
+  function stopFan() {
+    window.clearInterval(fanTimer);
+    fanTimer = 0;
+  }
+
+  function startFan() {
+    stopFan();
+    if (!reduceMotion.matches) fanTimer = window.setInterval(() => showApproach(fanIndex + 1), 3600);
+  }
+
+  fanTabs.forEach((tab, index) => tab.addEventListener("click", () => showApproach(index)));
+  fanPrevious.addEventListener("click", () => showApproach(fanIndex - 1));
+  fanNext.addEventListener("click", () => showApproach(fanIndex + 1));
+  approachFan.addEventListener("focusin", stopFan);
+  approachFan.addEventListener("focusout", (event) => {
+    if (!approachFan.contains(event.relatedTarget)) startFan();
+  });
+  startFan();
+}
+
+const trailStage = document.querySelector("[data-trail-stage]");
+
+if (trailStage) {
+  const trailImages = [
+    "assets/xiangcanyan/portfolio-05.webp",
+    "assets/xiangcanyan/portfolio-09.webp",
+    "assets/xiangcanyan/portfolio-13.webp",
+    "assets/xiangcanyan/portfolio-17.webp",
+    "assets/xiangcanyan/portfolio-21.webp",
+    "assets/xiangcanyan/portfolio-23.webp",
+  ];
+  const canTrail = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let trailIndex = 0;
+  let lastTrailTime = 0;
+  let lastTrailX = -1000;
+  let lastTrailY = -1000;
+
+  trailStage.addEventListener("pointermove", (event) => {
+    if (!canTrail.matches || reduceMotion.matches) return;
+    const now = window.performance.now();
+    const distance = Math.hypot(event.clientX - lastTrailX, event.clientY - lastTrailY);
+    if (now - lastTrailTime < 72 || distance < 30) return;
+
+    const rect = trailStage.getBoundingClientRect();
+    const image = document.createElement("img");
+    image.className = "trail-card";
+    image.src = trailImages[trailIndex % trailImages.length];
+    image.alt = "";
+    image.setAttribute("aria-hidden", "true");
+    image.style.setProperty("--trail-x", `${event.clientX - rect.left}px`);
+    image.style.setProperty("--trail-y", `${event.clientY - rect.top}px`);
+    image.style.setProperty("--trail-rotate", `${Math.round(Math.random() * 16 - 8)}deg`);
+    trailStage.appendChild(image);
+    image.addEventListener("animationend", () => image.remove(), { once: true });
+
+    trailIndex += 1;
+    lastTrailTime = now;
+    lastTrailX = event.clientX;
+    lastTrailY = event.clientY;
+  }, { passive: true });
+}
+
 async function copyText(value) {
   if (navigator.clipboard && window.isSecureContext) {
     await navigator.clipboard.writeText(value);
@@ -162,20 +253,22 @@ async function copyText(value) {
   if (!copied) throw new Error("Copy failed");
 }
 
-copyButton.addEventListener("click", async () => {
-  const originalText = copyButton.textContent;
-  try {
-    await copyText(copyButton.dataset.copy);
-    copyButton.textContent = "已复制";
-    copyButton.classList.add("is-copied");
-  } catch {
-    copyButton.textContent = "请手动复制";
-  }
+copyButtons.forEach((copyButton) => {
+  copyButton.addEventListener("click", async () => {
+    const originalText = copyButton.textContent;
+    try {
+      await copyText(copyButton.dataset.copy);
+      copyButton.textContent = "已复制";
+      copyButton.classList.add("is-copied");
+    } catch {
+      copyButton.textContent = "请手动复制";
+    }
 
-  window.setTimeout(() => {
-    copyButton.textContent = originalText;
-    copyButton.classList.remove("is-copied");
-  }, 1800);
+    window.setTimeout(() => {
+      copyButton.textContent = originalText;
+      copyButton.classList.remove("is-copied");
+    }, 1800);
+  });
 });
 
 const lightbox = document.querySelector(".lightbox");
