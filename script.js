@@ -68,6 +68,7 @@ function renderSpotlight() {
 
 function moveSpotlight(event) {
   if (!heroReveal) return;
+  heroSection.classList.add("is-interacting");
   const rect = heroSection.getBoundingClientRect();
   spotlight.targetX = Math.min(Math.max(event.clientX - rect.left, 0), rect.width);
   spotlight.targetY = Math.min(Math.max(event.clientY - rect.top, 0), rect.height);
@@ -90,7 +91,18 @@ window.addEventListener("resize", () => {
   updateHeader();
   if (!spotlight.initialized || window.scrollY < heroSection.offsetHeight) setInitialSpotlight();
 });
+heroSection.addEventListener("pointerenter", (event) => {
+  heroSection.classList.add("is-interacting");
+  moveSpotlight(event);
+}, { passive: true });
 heroSection.addEventListener("pointermove", moveSpotlight, { passive: true });
+heroSection.addEventListener("pointerleave", () => {
+  heroSection.classList.remove("is-interacting");
+  if (spotlight.frame) window.cancelAnimationFrame(spotlight.frame);
+  spotlight.frame = 0;
+  heroSection.style.setProperty("--scene-x", "0px");
+  heroSection.style.setProperty("--scene-y", "0px");
+}, { passive: true });
 
 menuButton.addEventListener("click", () => {
   const willOpen = menuButton.getAttribute("aria-expanded") !== "true";
