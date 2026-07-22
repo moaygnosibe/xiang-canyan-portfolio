@@ -2231,6 +2231,7 @@ a {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 
   .reveal {
@@ -2718,6 +2719,26 @@ body {
   .project {
     border-right: 0;
     border-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-outer,
+  .orbit-outer .skill-token {
+    animation-duration: 900s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .orbit-middle,
+  .orbit-middle .skill-token {
+    animation-duration: 720s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .orbit-inner,
+  .orbit-inner .skill-token {
+    animation-duration: 600s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 
