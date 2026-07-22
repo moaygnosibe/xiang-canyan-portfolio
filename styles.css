@@ -600,12 +600,12 @@ a {
 }
 
 .hero-base {
-  --hero-image: url("assets/xiangcanyan/hero-rock-v3.png");
+  --hero-image: url("assets/xiangcanyan/hero-rock-v3.webp");
   z-index: 0;
 }
 
 .hero-reveal {
-  --hero-image: url("assets/xiangcanyan/hero-grass-v3.png");
+  --hero-image: url("assets/xiangcanyan/hero-grass-v3.webp");
   z-index: 1;
   opacity: 0;
   pointer-events: none;
