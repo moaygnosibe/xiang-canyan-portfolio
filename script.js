@@ -155,7 +155,6 @@ if (approachFan) {
   const fanPrevious = approachFan.querySelector("[data-fan-prev]");
   const fanNext = approachFan.querySelector("[data-fan-next]");
   let fanIndex = 0;
-  let fanTimer = 0;
   let fanChangeTimer = 0;
 
   function showApproach(nextIndex) {
@@ -173,24 +172,17 @@ if (approachFan) {
     }, reduceMotion.matches ? 0 : 150);
   }
 
-  function stopFan() {
-    window.clearInterval(fanTimer);
-    fanTimer = 0;
-  }
-
-  function startFan() {
-    stopFan();
-    if (!reduceMotion.matches) fanTimer = window.setInterval(() => showApproach(fanIndex + 1), 3600);
-  }
-
-  fanTabs.forEach((tab, index) => tab.addEventListener("click", () => showApproach(index)));
+  fanTabs.forEach((tab, index) => {
+    tab.addEventListener("pointerenter", () => showApproach(index), { passive: true });
+    tab.addEventListener("click", () => showApproach(index));
+    tab.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      showApproach(index);
+    });
+  });
   fanPrevious.addEventListener("click", () => showApproach(fanIndex - 1));
   fanNext.addEventListener("click", () => showApproach(fanIndex + 1));
-  approachFan.addEventListener("focusin", stopFan);
-  approachFan.addEventListener("focusout", (event) => {
-    if (!approachFan.contains(event.relatedTarget)) startFan();
-  });
-  startFan();
 }
 
 const trailStage = document.querySelector("[data-trail-stage]");

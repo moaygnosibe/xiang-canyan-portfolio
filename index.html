@@ -26,7 +26,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=19" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -114,11 +114,22 @@
         <aside class="about-note reveal" aria-labelledby="approach-title">
           <p class="about-note-kicker">我的设计方法</p>
           <div class="approach-fan" data-approach-fan data-active="0">
-            <div class="fan-arc" aria-hidden="true">
-              <div class="fan-wheel"></div>
-              <button class="fan-tab is-active" type="button" data-index="0" data-title="读懂场地" data-description="从环境、文化与使用者的真实感受出发" title="读懂场地">01</button>
-              <button class="fan-tab" type="button" data-index="1" data-title="建立秩序" data-description="把研究转译为空间结构与清晰逻辑" title="建立秩序">02</button>
-              <button class="fan-tab" type="button" data-index="2" data-title="鲜活表达" data-description="用视觉、材质与叙事留下可感知的记忆" title="鲜活表达">03</button>
+            <div class="fan-arc">
+              <svg class="fan-sectors" viewBox="0 0 600 320" role="group" aria-label="三项设计方法">
+                <g class="fan-tab fan-sector is-active" data-index="0" data-title="读懂场地" data-description="从环境、文化与使用者的真实感受出发" role="button" tabindex="0" aria-label="读懂场地">
+                  <path d="M300 300 L40 300 A260 260 0 0 1 170 75 Z"></path>
+                  <text x="116" y="230">01</text>
+                </g>
+                <g class="fan-tab fan-sector" data-index="1" data-title="建立秩序" data-description="把研究转译为空间结构与清晰逻辑" role="button" tabindex="0" aria-label="建立秩序">
+                  <path d="M300 300 L170 75 A260 260 0 0 1 430 75 Z"></path>
+                  <text x="300" y="132">02</text>
+                </g>
+                <g class="fan-tab fan-sector" data-index="2" data-title="鲜活表达" data-description="用视觉、材质与叙事留下可感知的记忆" role="button" tabindex="0" aria-label="鲜活表达">
+                  <path d="M300 300 L430 75 A260 260 0 0 1 560 300 Z"></path>
+                  <text x="484" y="230">03</text>
+                </g>
+                <circle class="fan-pivot" cx="300" cy="300" r="10"></circle>
+              </svg>
             </div>
             <div class="fan-content" aria-live="polite">
               <span class="fan-count">01 / 03</span>
@@ -313,7 +324,7 @@
       <section id="research" class="research-section section-band" aria-labelledby="research-title">
         <header class="research-heading reveal">
           <p class="section-kicker">研究与竞赛</p>
-          <h2 id="research-title">设计之外，<br />保持研究的深度。</h2>
+          <h2 id="research-title"><span>设计之外</span><span>保持研究的深度</span></h2>
         </header>
         <div class="research-grid">
           <article class="research-card reveal">
@@ -422,7 +433,7 @@
       <section id="contact" class="contact-section" aria-labelledby="contact-title">
         <div class="contact-intro reveal">
           <p class="section-kicker">联系我</p>
-          <h2 id="contact-title">让新的连接<br />继续生长。</h2>
+          <h2 id="contact-title"><span>让新的连接</span><span>继续生长</span></h2>
           <p>关于设计、研究、合作与新的场域，欢迎来信。</p>
         </div>
         <div class="contact-field reveal">
@@ -455,6 +466,6 @@
       <button class="lightbox-arrow lightbox-next" type="button" aria-label="下一张">→</button>
     </dialog>
 
-    <script src="script.js?v=17"></script>
+    <script src="script.js?v=19"></script>
   </body>
 </html>

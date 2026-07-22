@@ -3298,3 +3298,174 @@ h4,
     display: none;
   }
 }
+
+/* Refined titles and segmented design-method fan */
+.research-heading h2,
+.contact-section h2 {
+  font-family: var(--font-kai);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.research-heading h2 {
+  font-size: clamp(48px, 4vw, 66px);
+}
+
+.research-heading {
+  position: sticky;
+  top: calc(var(--header-height) + 42px);
+}
+
+.research-heading h2 span,
+.contact-section h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.about-note {
+  min-height: 530px;
+  padding: 28px 26px 20px;
+  border: 1px solid rgba(210, 231, 219, 0.14);
+  background: #10211e;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.2);
+}
+
+.approach-fan {
+  min-height: 420px;
+  margin-top: 8px;
+}
+
+.fan-arc {
+  width: 100%;
+  height: auto;
+  margin: 8px auto 0;
+  overflow: visible;
+}
+
+.fan-sectors {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.fan-arc .fan-sector {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #d9e6df;
+  opacity: 0.82;
+  cursor: pointer;
+  transform: scale(1);
+  transform-box: view-box;
+  transform-origin: 300px 300px;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease;
+}
+
+.fan-sector path {
+  stroke: rgba(175, 207, 190, 0.3);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+  transition: fill 320ms ease, stroke 320ms ease, filter 320ms ease;
+}
+
+.fan-sector[data-index="0"] path {
+  fill: #17352f;
+}
+
+.fan-sector[data-index="1"] path {
+  fill: #1b302b;
+}
+
+.fan-sector[data-index="2"] path {
+  fill: #26312d;
+}
+
+.fan-sector text {
+  fill: currentColor;
+  font-family: var(--font-body-song);
+  font-size: 25px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.fan-sector.is-active {
+  color: #16211e;
+  opacity: 1;
+}
+
+.fan-sector.is-active path {
+  fill: #d88466;
+  stroke: #e4a087;
+  filter: drop-shadow(0 15px 24px rgba(0, 0, 0, 0.22));
+}
+
+.fan-arc:has(.fan-sector:hover) .fan-sector:not(:hover),
+.fan-arc:has(.fan-sector:focus-visible) .fan-sector:not(:focus-visible) {
+  opacity: 0.42;
+  transform: scale(0.91);
+}
+
+.fan-arc .fan-sector:hover,
+.fan-arc .fan-sector:focus-visible {
+  opacity: 1;
+  transform: scale(1.08);
+  outline: none;
+}
+
+.fan-arc .fan-sector:hover path,
+.fan-arc .fan-sector:focus-visible path {
+  fill: #d88466;
+  stroke: #efb099;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.3));
+}
+
+.fan-pivot {
+  fill: #d88466;
+  stroke: #10211e;
+  stroke-width: 5;
+  pointer-events: none;
+}
+
+.fan-content {
+  min-height: 140px;
+  padding-top: 0;
+}
+
+.fan-content h3 {
+  font-size: 40px;
+}
+
+.fan-controls {
+  margin-top: 0;
+}
+
+@media (max-width: 620px) {
+  .research-heading h2 {
+    font-size: 46px;
+  }
+
+  .contact-section h2 {
+    font-size: 56px;
+  }
+
+  .about-note {
+    min-height: 500px;
+    padding: 24px 18px 18px;
+  }
+
+  .fan-content h3 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .research-heading {
+    position: relative;
+    top: auto;
+  }
+}
