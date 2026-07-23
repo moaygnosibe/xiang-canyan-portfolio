@@ -189,41 +189,98 @@ const trailStage = document.querySelector("[data-trail-stage]");
 
 if (trailStage) {
   const trailImages = [
+    "assets/xiangcanyan/portfolio-03.webp",
     "assets/xiangcanyan/portfolio-05.webp",
+    "assets/xiangcanyan/portfolio-07.webp",
     "assets/xiangcanyan/portfolio-09.webp",
+    "assets/xiangcanyan/portfolio-11.webp",
     "assets/xiangcanyan/portfolio-13.webp",
+    "assets/xiangcanyan/portfolio-15.webp",
     "assets/xiangcanyan/portfolio-17.webp",
+    "assets/xiangcanyan/portfolio-19.webp",
     "assets/xiangcanyan/portfolio-21.webp",
     "assets/xiangcanyan/portfolio-23.webp",
   ];
   const canTrail = window.matchMedia("(hover: hover) and (pointer: fine)");
   let trailIndex = 0;
-  let lastTrailTime = 0;
-  let lastTrailX = -1000;
-  let lastTrailY = -1000;
+  let trailLayer = 10;
+  let previousPoint = null;
+  const activeTrailCards = [];
+  const spacing = reduceMotion.matches ? 52 : 36;
+  const cardLimit = reduceMotion.matches ? 10 : 16;
 
-  trailStage.addEventListener("pointermove", (event) => {
-    if (!canTrail.matches || reduceMotion.matches) return;
-    const now = window.performance.now();
-    const distance = Math.hypot(event.clientX - lastTrailX, event.clientY - lastTrailY);
-    if (now - lastTrailTime < 72 || distance < 30) return;
+  const removeTrailCard = (image) => {
+    const cardIndex = activeTrailCards.indexOf(image);
+    if (cardIndex >= 0) activeTrailCards.splice(cardIndex, 1);
+    image.remove();
+  };
 
-    const rect = trailStage.getBoundingClientRect();
+  const spawnTrailCard = (x, y, direction = 0) => {
     const image = document.createElement("img");
     image.className = "trail-card";
     image.src = trailImages[trailIndex % trailImages.length];
     image.alt = "";
     image.setAttribute("aria-hidden", "true");
-    image.style.setProperty("--trail-x", `${event.clientX - rect.left}px`);
-    image.style.setProperty("--trail-y", `${event.clientY - rect.top}px`);
-    image.style.setProperty("--trail-rotate", `${Math.round(Math.random() * 16 - 8)}deg`);
+    image.style.setProperty("--trail-x", `${x}px`);
+    image.style.setProperty("--trail-y", `${y}px`);
+    image.style.setProperty("--trail-rotate", `${Math.round(Math.random() * 10 - 5)}deg`);
+    image.style.setProperty("--trail-drift-x", `${Math.cos(direction) * -18}px`);
+    image.style.setProperty("--trail-drift-y", `${Math.sin(direction) * -18 - 12}px`);
+    image.style.zIndex = `${trailLayer}`;
     trailStage.appendChild(image);
-    image.addEventListener("animationend", () => image.remove(), { once: true });
-
+    activeTrailCards.push(image);
     trailIndex += 1;
-    lastTrailTime = now;
-    lastTrailX = event.clientX;
-    lastTrailY = event.clientY;
+    trailLayer += 1;
+
+    image.addEventListener("animationend", () => removeTrailCard(image), { once: true });
+    if (activeTrailCards.length > cardLimit) {
+      const oldestCard = activeTrailCards.shift();
+      oldestCard.classList.add("trail-card-expire");
+    }
+  };
+
+  trailStage.addEventListener("pointerenter", (event) => {
+    if (!canTrail.matches) return;
+    const rect = trailStage.getBoundingClientRect();
+    previousPoint = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+    trailStage.classList.add("is-tracing");
+    spawnTrailCard(previousPoint.x, previousPoint.y);
+  }, { passive: true });
+
+  trailStage.addEventListener("pointermove", (event) => {
+    if (!canTrail.matches) return;
+    const rect = trailStage.getBoundingClientRect();
+    const currentPoint = {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+    if (!previousPoint) previousPoint = currentPoint;
+
+    const deltaX = currentPoint.x - previousPoint.x;
+    const deltaY = currentPoint.y - previousPoint.y;
+    const distance = Math.hypot(deltaX, deltaY);
+    if (distance < spacing) return;
+
+    const direction = Math.atan2(deltaY, deltaX);
+    const steps = Math.min(4, Math.floor(distance / spacing));
+    for (let step = 1; step <= steps; step += 1) {
+      const progress = step / steps;
+      spawnTrailCard(
+        previousPoint.x + deltaX * progress,
+        previousPoint.y + deltaY * progress,
+        direction,
+      );
+    }
+    previousPoint = currentPoint;
+  }, { passive: true });
+
+  trailStage.addEventListener("pointerleave", () => {
+    previousPoint = null;
+    trailStage.classList.remove("is-tracing");
+    activeTrailCards.forEach((card) => card.classList.add("trail-card-expire"));
   }, { passive: true });
 }
 
