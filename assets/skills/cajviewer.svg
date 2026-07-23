@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CAJViewer">
+  <defs>
+    <linearGradient id="caj-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ef7453"/>
+      <stop offset="1" stop-color="#b83b2d"/>
+    </linearGradient>
+  </defs>
+  <path d="M13 4h31l10 10v46H13A7 7 0 0 1 6 53V11a7 7 0 0 1 7-7Z" fill="url(#caj-bg)"/>
+  <path d="M44 4v11h10" fill="#f9c8b9" opacity=".74"/>
+  <path d="M15 22h32v24H15z" fill="#172522" opacity=".86"/>
+  <text x="31" y="39" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">CAJ</text>
+  <path d="M19 51h22" stroke="#ffd4c4" stroke-width="3" stroke-linecap="round"/>
+</svg>

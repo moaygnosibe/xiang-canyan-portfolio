@@ -2725,19 +2725,19 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .orbit-outer,
   .orbit-outer .skill-token {
-    animation-duration: 360s !important;
+    animation-duration: 180s !important;
     animation-iteration-count: infinite !important;
   }
 
   .orbit-middle,
   .orbit-middle .skill-token {
-    animation-duration: 288s !important;
+    animation-duration: 144s !important;
     animation-iteration-count: infinite !important;
   }
 
   .orbit-inner,
   .orbit-inner .skill-token {
-    animation-duration: 240s !important;
+    animation-duration: 120s !important;
     animation-iteration-count: infinite !important;
   }
 }
@@ -3728,7 +3728,7 @@ h4,
   border-radius: 50%;
   box-shadow: inset 0 0 44px rgba(126, 175, 153, 0.025);
   transform: translate(-50%, -50%);
-  animation: skillOrbit 64s linear infinite;
+  animation: skillOrbit 32s linear infinite;
   will-change: transform;
 }
 
@@ -3755,20 +3755,20 @@ h4,
 .orbit-outer {
   width: 92%;
   aspect-ratio: 1;
-  animation-duration: 64s;
+  animation-duration: 32s;
 }
 
 .orbit-middle {
   width: 67%;
   aspect-ratio: 1;
   animation-name: skillOrbitReverse;
-  animation-duration: 52s;
+  animation-duration: 26s;
 }
 
 .orbit-inner {
   width: 42%;
   aspect-ratio: 1;
-  animation-duration: 42s;
+  animation-duration: 21s;
 }
 
 .skill-node {
@@ -3788,52 +3788,58 @@ h4,
   top: 0;
   left: 0;
   display: block;
-  animation: skillCounter 64s linear infinite;
+  animation: skillCounter 32s linear infinite;
   will-change: transform;
 }
 
 .orbit-middle .skill-token {
   animation-name: skillCounterReverse;
-  animation-duration: 52s;
+  animation-duration: 26s;
 }
 
 .orbit-inner .skill-token {
-  animation-duration: 42s;
+  animation-duration: 21s;
 }
 
 .skill-chip {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(226, 238, 231, 0.26);
-  border-radius: 7px;
-  background: rgba(235, 242, 237, 0.92);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(162, 201, 182, 0.3);
+  border-radius: 9px;
+  background:
+    linear-gradient(145deg, rgba(40, 65, 57, 0.96), rgba(10, 23, 20, 0.96));
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(244, 250, 246, 0.1),
+    inset 0 0 24px rgba(115, 169, 145, 0.05);
+  backdrop-filter: blur(14px);
   transform: translate(-50%, -50%);
   transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .orbit-inner .skill-chip {
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
 }
 
 .skill-chip img {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
   image-rendering: auto;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
 .orbit-inner .skill-chip img {
-  width: 43px;
-  height: 43px;
+  width: 40px;
+  height: 40px;
 }
 
 .skill-chip small {
@@ -3871,7 +3877,8 @@ h4,
 .skill-node:hover .skill-chip,
 .skill-node:focus-visible .skill-chip {
   border-color: rgba(216, 132, 102, 0.82);
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.38), 0 0 0 5px rgba(216, 132, 102, 0.12);
+  background: linear-gradient(145deg, rgba(63, 83, 72, 0.98), rgba(20, 32, 28, 0.98));
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.42), 0 0 0 5px rgba(216, 132, 102, 0.11);
   transform: translate(-50%, -50%) translateY(-5px) scale(1.16);
 }
 
