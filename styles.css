@@ -2725,19 +2725,19 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .orbit-outer,
   .orbit-outer .skill-token {
-    animation-duration: 900s !important;
+    animation-duration: 360s !important;
     animation-iteration-count: infinite !important;
   }
 
   .orbit-middle,
   .orbit-middle .skill-token {
-    animation-duration: 720s !important;
+    animation-duration: 288s !important;
     animation-iteration-count: infinite !important;
   }
 
   .orbit-inner,
   .orbit-inner .skill-token {
-    animation-duration: 600s !important;
+    animation-duration: 240s !important;
     animation-iteration-count: infinite !important;
   }
 }
@@ -3649,7 +3649,7 @@ h4,
   border-radius: 50%;
   box-shadow: inset 0 0 44px rgba(126, 175, 153, 0.025);
   transform: translate(-50%, -50%);
-  animation: skillOrbit 160s linear infinite;
+  animation: skillOrbit 64s linear infinite;
   will-change: transform;
 }
 
@@ -3676,20 +3676,20 @@ h4,
 .orbit-outer {
   width: 92%;
   aspect-ratio: 1;
-  animation-duration: 160s;
+  animation-duration: 64s;
 }
 
 .orbit-middle {
   width: 67%;
   aspect-ratio: 1;
   animation-name: skillOrbitReverse;
-  animation-duration: 130s;
+  animation-duration: 52s;
 }
 
 .orbit-inner {
   width: 42%;
   aspect-ratio: 1;
-  animation-duration: 105s;
+  animation-duration: 42s;
 }
 
 .skill-node {
@@ -3709,17 +3709,17 @@ h4,
   top: 0;
   left: 0;
   display: block;
-  animation: skillCounter 160s linear infinite;
+  animation: skillCounter 64s linear infinite;
   will-change: transform;
 }
 
 .orbit-middle .skill-token {
   animation-name: skillCounterReverse;
-  animation-duration: 130s;
+  animation-duration: 52s;
 }
 
 .orbit-inner .skill-token {
-  animation-duration: 105s;
+  animation-duration: 42s;
 }
 
 .skill-chip {
