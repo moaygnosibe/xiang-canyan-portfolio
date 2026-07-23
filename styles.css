@@ -3368,11 +3368,41 @@ h4,
 }
 
 .about-note {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 530px;
   padding: 28px 26px 20px;
-  border: 1px solid rgba(210, 231, 219, 0.14);
-  background: #10211e;
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(210, 231, 219, 0.2);
+  border-bottom: 1px solid rgba(210, 231, 219, 0.1);
+  background:
+    linear-gradient(135deg, rgba(216, 132, 102, 0.06), transparent 34%),
+    linear-gradient(165deg, #10231f 0%, #0d1d1a 54%, #15241f 100%);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16);
+}
+
+.about-note::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 78% 48% at 50% 104%, transparent 0 45%, rgba(138, 183, 161, 0.12) 45.3% 45.8%, transparent 46.1% 59%, rgba(138, 183, 161, 0.08) 59.3% 59.8%, transparent 60.1%),
+    linear-gradient(90deg, transparent 0 49.8%, rgba(222, 235, 227, 0.05) 50%, transparent 50.2%);
+  pointer-events: none;
+}
+
+.about-note::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -8%;
+  bottom: 8%;
+  width: 58%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(216, 132, 102, 0.28), transparent);
+  transform: rotate(-18deg);
+  pointer-events: none;
 }
 
 .approach-fan {
@@ -3407,27 +3437,27 @@ h4,
   cursor: pointer;
   transform: scale(1);
   transform-box: view-box;
-  transform-origin: 300px 300px;
+  transform-origin: 50% 93.75%;
   transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 300ms ease;
 }
 
 .fan-sector path {
   stroke: rgba(175, 207, 190, 0.3);
-  stroke-width: 2;
+  stroke-width: 1.6;
   vector-effect: non-scaling-stroke;
   transition: fill 320ms ease, stroke 320ms ease, filter 320ms ease;
 }
 
 .fan-sector[data-index="0"] path {
-  fill: #17352f;
+  fill: url(#fan-sector-one);
 }
 
 .fan-sector[data-index="1"] path {
-  fill: #1b302b;
+  fill: url(#fan-sector-two);
 }
 
 .fan-sector[data-index="2"] path {
-  fill: #26312d;
+  fill: url(#fan-sector-three);
 }
 
 .fan-sector text {
@@ -3444,35 +3474,55 @@ h4,
 }
 
 .fan-sector.is-active path {
-  fill: #d88466;
-  stroke: #e4a087;
-  filter: drop-shadow(0 15px 24px rgba(0, 0, 0, 0.22));
+  fill: url(#fan-sector-active);
+  stroke: #efb099;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.28));
 }
 
 .fan-arc:has(.fan-sector:hover) .fan-sector:not(:hover),
 .fan-arc:has(.fan-sector:focus-visible) .fan-sector:not(:focus-visible) {
-  opacity: 0.42;
-  transform: scale(0.91);
+  opacity: 0.5;
+  transform: scale(0.955);
 }
 
 .fan-arc .fan-sector:hover,
 .fan-arc .fan-sector:focus-visible {
   opacity: 1;
-  transform: scale(1.08);
+  transform: scale(1.045);
   outline: none;
 }
 
 .fan-arc .fan-sector:hover path,
 .fan-arc .fan-sector:focus-visible path {
-  fill: #d88466;
+  fill: url(#fan-sector-active);
   stroke: #efb099;
   filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.3));
 }
 
+.fan-guide {
+  fill: none;
+  stroke: rgba(213, 231, 221, 0.1);
+  stroke-width: 1;
+  stroke-dasharray: 2 8;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.fan-guide-middle {
+  stroke: rgba(216, 132, 102, 0.14);
+  stroke-dasharray: 18 10;
+}
+
+.fan-guide-inner {
+  stroke: rgba(143, 183, 163, 0.16);
+  stroke-dasharray: none;
+}
+
 .fan-pivot {
-  fill: #d88466;
+  fill: #efaa8d;
   stroke: #10211e;
   stroke-width: 5;
+  filter: drop-shadow(0 0 10px rgba(216, 132, 102, 0.34));
   pointer-events: none;
 }
 
@@ -3487,6 +3537,11 @@ h4,
 
 .fan-controls {
   margin-top: 0;
+}
+
+.trail-heading h2 {
+  font-family: var(--font-kai);
+  font-weight: 600;
 }
 
 @media (max-width: 620px) {

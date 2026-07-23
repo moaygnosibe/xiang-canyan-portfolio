@@ -26,7 +26,7 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=24" />
+    <link rel="stylesheet" href="styles.css?v=25" />
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
@@ -116,18 +116,40 @@
           <div class="approach-fan" data-approach-fan data-active="0">
             <div class="fan-arc">
               <svg class="fan-sectors" viewBox="0 0 600 320" role="group" aria-label="三项设计方法">
-                <g class="fan-tab fan-sector is-active" data-index="0" data-title="读懂场地" data-description="从环境、文化与使用者的真实感受出发" role="button" tabindex="0" aria-label="读懂场地">
+                <defs>
+                  <linearGradient id="fan-sector-one" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#25483f"></stop>
+                    <stop offset="1" stop-color="#142b27"></stop>
+                  </linearGradient>
+                  <linearGradient id="fan-sector-two" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2f433b"></stop>
+                    <stop offset="1" stop-color="#162824"></stop>
+                  </linearGradient>
+                  <linearGradient id="fan-sector-three" x1="1" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#33423b"></stop>
+                    <stop offset="1" stop-color="#182a25"></stop>
+                  </linearGradient>
+                  <linearGradient id="fan-sector-active" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#efaa8d"></stop>
+                    <stop offset="0.5" stop-color="#d88466"></stop>
+                    <stop offset="1" stop-color="#a76555"></stop>
+                  </linearGradient>
+                </defs>
+                <g class="fan-sector is-active" data-index="0" data-title="读懂场地" data-description="从环境、文化与使用者的真实感受出发" role="button" tabindex="0" aria-label="读懂场地">
                   <path d="M300 300 L40 300 A260 260 0 0 1 170 75 Z"></path>
                   <text x="116" y="230">01</text>
                 </g>
-                <g class="fan-tab fan-sector" data-index="1" data-title="建立秩序" data-description="把研究转译为空间结构与清晰逻辑" role="button" tabindex="0" aria-label="建立秩序">
+                <g class="fan-sector" data-index="1" data-title="建立秩序" data-description="把研究转译为空间结构与清晰逻辑" role="button" tabindex="0" aria-label="建立秩序">
                   <path d="M300 300 L170 75 A260 260 0 0 1 430 75 Z"></path>
                   <text x="300" y="132">02</text>
                 </g>
-                <g class="fan-tab fan-sector" data-index="2" data-title="鲜活表达" data-description="用视觉、材质与叙事留下可感知的记忆" role="button" tabindex="0" aria-label="鲜活表达">
+                <g class="fan-sector" data-index="2" data-title="鲜活表达" data-description="用视觉、材质与叙事留下可感知的记忆" role="button" tabindex="0" aria-label="鲜活表达">
                   <path d="M300 300 L430 75 A260 260 0 0 1 560 300 Z"></path>
                   <text x="484" y="230">03</text>
                 </g>
+                <path class="fan-guide fan-guide-outer" d="M58 300 A242 242 0 0 1 542 300"></path>
+                <path class="fan-guide fan-guide-middle" d="M118 300 A182 182 0 0 1 482 300"></path>
+                <path class="fan-guide fan-guide-inner" d="M182 300 A118 118 0 0 1 418 300"></path>
                 <circle class="fan-pivot" cx="300" cy="300" r="10"></circle>
               </svg>
             </div>
@@ -543,6 +565,6 @@
       <button class="lightbox-arrow lightbox-next" type="button" aria-label="下一张">→</button>
     </dialog>
 
-    <script src="script.js?v=24"></script>
+    <script src="script.js?v=25"></script>
   </body>
 </html>

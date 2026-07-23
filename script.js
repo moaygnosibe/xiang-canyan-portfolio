@@ -147,7 +147,7 @@ document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe
 const approachFan = document.querySelector("[data-approach-fan]");
 
 if (approachFan) {
-  const fanTabs = [...approachFan.querySelectorAll(".fan-tab")];
+  const fanTabs = [...approachFan.querySelectorAll(".fan-sector")];
   const fanContent = approachFan.querySelector(".fan-content");
   const fanCount = approachFan.querySelector(".fan-count");
   const fanTitle = fanContent.querySelector("h3");
